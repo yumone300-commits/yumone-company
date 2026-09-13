@@ -8,3 +8,13 @@
 @media(max-width:1100px){.header :global(.header-inner){width:calc(100% - 48px);gap:20px}.header :global(.desktop-nav){gap:24px;margin-left:20px;font-size:13px}.header :global(.header-cta){padding-inline:24px}.officialLogo{width:195px;height:62px}.officialLogo img{width:249px;height:119px;left:-24px;top:-29px}}
 @media(max-width:1000px){.header :global(.desktop-nav),.header :global(.header-cta){display:none}.header :global(.menu-toggle){display:flex;margin-left:auto}}
 @media(max-width:600px){.header :global(.header-inner){width:calc(100% - 40px);height:76px}.officialLogo{width:170px;height:54px}.officialLogo img{width:217px;height:104px;left:-21px;top:-26px}.header :global(.mobile-nav){width:calc(100% - 40px)}}
+/* Align the HOME header to the HOME hero, without changing other pages. */
+.homeHeader{background:#fff!important;box-shadow:none!important}
+.homeHeader :global(.header-inner){width:min(1240px,calc(100% - 64px));height:80px;display:grid;grid-template-columns:190px 1fr auto;gap:24px}
+.homeHeader :global(.desktop-nav){margin:0;justify-content:center;gap:28px;font-size:15px}
+.homeHeader :global(.header-cta){height:52px;min-height:52px;padding-inline:24px;font-size:15px}
+.homeHeader .officialLogo{width:180px;height:58px}
+.homeHeader .officialLogo img{width:230px;height:110px;left:-22px;top:-27px}
+@media(max-width:1100px){.homeHeader :global(.header-inner){width:calc(100% - 48px)}}
+@media(max-width:1000px){.homeHeader :global(.header-inner){display:flex;justify-content:space-between}.homeHeader :global(.desktop-nav),.homeHeader :global(.header-cta){display:none}}
+@media(max-width:480px){.homeHeader :global(.header-inner){width:calc(100% - 40px);height:72px}.homeHeader .officialLogo{width:160px;height:52px}.homeHeader .officialLogo img{width:205px;height:98px;left:-20px;top:-24px}}
