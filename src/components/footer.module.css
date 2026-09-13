@@ -1,0 +1,7 @@
+.footer{background:#fafafa;border-top:1px solid #e5e5e5}
+.footer :global(.footer-top p){font-size:16px;line-height:1.8;color:#555}
+.footer :global(.footer-top nav){font-size:16px;gap:24px}
+.footer :global(.footer-info){font-size:15px;line-height:1.8;color:#444;margin-top:28px}
+.footer :global(.footer-bottom){font-size:14px;color:#555;padding-block:24px}
+.footer :global(.footer-bottom small){font-size:14px}
+@media(max-width:600px){.footer :global(.footer-info),.footer :global(.footer-top nav){font-size:16px}.footer :global(.footer-bottom){gap:18px}.footer :global(.footer-bottom a){display:inline-block;padding-block:8px}}
