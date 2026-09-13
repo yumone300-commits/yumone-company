@@ -26,3 +26,4 @@
 .homeHeader :global(.desktop-nav a[aria-current=page]){border-bottom:2px solid #ed1c24}
 @media(max-width:768px){.homeHeader :global(.header-inner){width:calc(100% - 40px);height:72px}}
 
+/* Claude original header proportions, HOME only. */ .homeHeader :global(.header-inner){height:104px;width:calc(100% - 112px);max-width:1440px}.homeHeader :global(.header-cta){height:50px;border-radius:2px}@media(max-width:1000px){.homeHeader :global(.header-inner){height:72px;width:calc(100% - 40px)}}
