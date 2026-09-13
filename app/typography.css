@@ -1,0 +1,5 @@
+@font-face{font-family:'Pretendard';src:url('/fonts/PretendardVariable.woff2') format('woff2');font-weight:100 900;font-style:normal;font-display:swap}
+body{font-family:'Pretendard','Malgun Gothic',sans-serif;font-synthesis:none;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-weight:780;letter-spacing:-.045em;text-wrap:balance}
+button,.button{font-weight:700;letter-spacing:-.02em}
+p{letter-spacing:-.015em}
