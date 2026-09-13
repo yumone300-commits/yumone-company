@@ -1,5 +1,5 @@
 /* HOME hero and its trust strip only. */
-.hero{position:relative;background:linear-gradient(110deg,#fff 25%,#faf7f6 100%);isolation:isolate}
+.hero{position:relative;background:#fff;isolation:isolate}
 .container{width:min(1240px,calc(100% - 64px));margin-inline:auto}
 .hero>.container{display:grid;grid-template-columns:58% 42%;align-items:center;min-height:580px;gap:0}
 .copy{position:relative;z-index:1;padding:56px 0}
