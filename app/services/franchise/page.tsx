@@ -8,7 +8,7 @@ import {metadata as makeMetadata,JsonLd,BreadSchema} from '@/lib/seo';
 import styles from './franchise.module.css';
 
 export const metadata=makeMetadata('프랜차이즈 성장 시스템','10~100개 가맹점을 운영하는 본사를 위한 프랜차이즈 성장 시스템. 브랜드 진단, 가맹 모집, 본사 마케팅, 운영·교육 체계를 연결합니다.','/services/franchise');
-const crumbs=[{label:'사업분야',href:'/services'},{label:'프랜차이즈 성장 시스템',href:'/services/franchise'}];
+const crumbs=[{label:'사업분야',href:'/franchise'},{label:'프랜차이즈 성장 시스템',href:'/franchise'}];
 const relatedCases=cases.filter(item=>franchise.relatedCaseSlugs.includes(item.slug));
 export default function Franchise(){return <div className={styles.page}>
   <div className={styles.hero}><PageHero {...franchise.hero}/></div>
@@ -31,9 +31,9 @@ export default function Franchise(){return <div className={styles.page}>
     <div className={styles.reasons}>{franchise.why.map((item,index)=><div key={item.title}><span>0{index+1}</span><div><h3>{item.title}</h3><p>{item.description}</p></div></div>)}</div>
   </Container></section>
   <section className="section" id="cases"><Container>
-    <SectionTitle eyebrow="05 / RELATED CASES" title="관련 성공사례" href="/cases" linkText="사례 전체보기"/>
+    <SectionTitle eyebrow="05 / RELATED CASES" title="관련 성공사례" href="/project" linkText="사례 전체보기"/>
     <p className={styles.caseNotice}>현재 등록된 사례는 구성 예시입니다. 실제 고객사와 성과는 확인 후 공개합니다.</p>
-    <div className={styles.cases}>{relatedCases.map(item=><Link className="case-card" href={`/cases/${item.slug}`} key={item.slug}><Photo name={item.image} alt={`${item.category} 분야 참고 이미지`}/><div className="card-content"><span className="sample-badge">구성 예시 · 실제 사례 아님</span><h3>{item.title}</h3><p>{item.service}</p><div className="tags">{item.tags.map(tag=><span key={tag}>{tag}</span>)}</div><span className="red-link">사례 구성 보기 <ArrowRight size={16} aria-hidden="true"/></span></div></Link>)}</div>
+    <div className={styles.cases}>{relatedCases.map(item=><Link className="case-card" href={`/project/marketing/${item.slug}`} key={item.slug}><Photo name={item.image} alt={`${item.category} 분야 참고 이미지`}/><div className="card-content"><span className="sample-badge">구성 예시 · 실제 사례 아님</span><h3>{item.title}</h3><p>{item.service}</p><div className="tags">{item.tags.map(tag=><span key={tag}>{tag}</span>)}</div><span className="red-link">사례 구성 보기 <ArrowRight size={16} aria-hidden="true"/></span></div></Link>)}</div>
   </Container></section>
   <section className="section soft" id="faq"><Container><SectionTitle eyebrow="06 / FAQ" title="자주 묻는 질문"/><div className={`faq ${styles.faq}`}>{franchise.faq.map(item=><details key={item.q}><summary>{item.q}</summary><p>{item.a}</p></details>)}</div></Container></section>
   <section className={`section ${styles.cta}`}><Container><p className="eyebrow">YOUR NEXT GROWTH</p><h2>우리 브랜드는 지금<br/>어느 성장 단계에 있을까요?</h2><p>현재의 과제를 확인하고, 다음 성장에 필요한 구조부터 살펴보세요.</p><div className="button-row"><Button href="/contact?service=franchise">프랜차이즈 성장 진단받기</Button></div></Container></section>
