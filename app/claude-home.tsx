@@ -544,7 +544,7 @@ function Contact(){return (<section id="contact" className={s.c237}>
 export function ClaudeHome(){return <div id="top" className={s.page}><Hero/><Company/><GrowthSystem/><WorkMethod/><WhyYumone/><Problems/><GrowthJourney/><Services/><GrowthCTA/><Difference/><Founder/><Cases/><ContentHub/><Education/><Partners/><FAQ/><FinalCTA/><Contact/><ReferenceFooter/></div>}
 
 function ReferenceFooter(){return <footer className={s.referenceFooter}><div className={s.footerGrid}>
-<div><img src="/images/pdf-reference/logo-mark-red.png" alt="염원컴퍼니" width="44" height="44"/><p>프랜차이즈의 성장을<br/>현장에서 설계합니다.</p></div>
+<div><a href="/" aria-label="염원컴퍼니 홈"><img src="/images/yumone-logo-white.svg" alt="YUMONE COMPANY" width="200" height="69" style={{maxWidth:"100%",height:"auto",objectFit:"contain"}}/></a><p>프랜차이즈의 성장을<br/>현장에서 설계합니다.</p></div>
 <div><h3>COMPANY</h3><p>염원컴퍼니 · 대표 염혜단<br/>프랜차이즈 전문 마케팅·교육·컨설팅<br/>사업자등록번호 147-86-03066</p></div>
 <div><h3>CONTACT</h3><p><a href="tel:0269496859">T. 02-6949-6859</a><br/>F. 0504-491-9439<br/><a href="mailto:yumone300@gmail.com">yumone300@gmail.com</a><br/>서울시 서초구 남부순환로350길 11, 8층</p></div>
 <div><h3>CHANNEL</h3><a href="https://www.youtube.com/@프차언니/">프차언니 유튜브 ↗</a><br/><a href="https://www.instagram.com/fc_aunni/">인스타그램 ↗</a><br/><a href="https://blog.naver.com/yumone_company">공식 블로그 ↗</a></div></div><div className={s.footerBottom}><span>© YUMONE COMPANY. All rights reserved.</span><span><a href="/privacy">개인정보처리방침</a> · <a href="/terms">이용약관</a></span></div></footer>}
