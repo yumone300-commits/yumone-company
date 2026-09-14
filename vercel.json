@@ -1,0 +1,124 @@
+{
+  "redirects": [
+    {
+      "source": "/services",
+      "destination": "/franchise",
+      "permanent": true
+    },
+    {
+      "source": "/services/",
+      "destination": "/franchise/",
+      "permanent": true
+    },
+    {
+      "source": "/services/franchise",
+      "destination": "/franchise",
+      "permanent": true
+    },
+    {
+      "source": "/services/franchise/",
+      "destination": "/franchise/",
+      "permanent": true
+    },
+    {
+      "source": "/services/marketing",
+      "destination": "/franchise/ads",
+      "permanent": true
+    },
+    {
+      "source": "/services/marketing/",
+      "destination": "/franchise/ads/",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-search",
+      "destination": "/ai-search",
+      "permanent": true
+    },
+    {
+      "source": "/services/ai-search/",
+      "destination": "/ai-search/",
+      "permanent": true
+    },
+    {
+      "source": "/services/consulting",
+      "destination": "/franchise/diagnosis",
+      "permanent": true
+    },
+    {
+      "source": "/services/consulting/",
+      "destination": "/franchise/diagnosis/",
+      "permanent": true
+    },
+    {
+      "source": "/education/headquarters",
+      "destination": "/education/hq",
+      "permanent": true
+    },
+    {
+      "source": "/education/headquarters/",
+      "destination": "/education/hq/",
+      "permanent": true
+    },
+    {
+      "source": "/education/sv",
+      "destination": "/education/supervisor",
+      "permanent": true
+    },
+    {
+      "source": "/education/sv/",
+      "destination": "/education/supervisor/",
+      "permanent": true
+    },
+    {
+      "source": "/education/franchisee",
+      "destination": "/education/owner",
+      "permanent": true
+    },
+    {
+      "source": "/education/franchisee/",
+      "destination": "/education/owner/",
+      "permanent": true
+    },
+    {
+      "source": "/education/ai-marketing",
+      "destination": "/education/ai",
+      "permanent": true
+    },
+    {
+      "source": "/education/ai-marketing/",
+      "destination": "/education/ai/",
+      "permanent": true
+    },
+    {
+      "source": "/cases",
+      "destination": "/project",
+      "permanent": true
+    },
+    {
+      "source": "/cases/",
+      "destination": "/project/",
+      "permanent": true
+    },
+    {
+      "source": "/insights",
+      "destination": "/insight",
+      "permanent": true
+    },
+    {
+      "source": "/insights/",
+      "destination": "/insight/",
+      "permanent": true
+    },
+    {
+      "source": "/insights/:slug",
+      "destination": "/insight/column/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/cases/:slug",
+      "destination": "/project/marketing/:slug",
+      "permanent": true
+    }
+  ]
+}
