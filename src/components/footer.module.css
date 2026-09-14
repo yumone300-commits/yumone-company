@@ -5,3 +5,5 @@
 .footer :global(.footer-bottom){font-size:14px;color:#555;padding-block:24px}
 .footer :global(.footer-bottom small){font-size:14px}
 @media(max-width:600px){.footer :global(.footer-info),.footer :global(.footer-top nav){font-size:16px}.footer :global(.footer-bottom){gap:18px}.footer :global(.footer-bottom a){display:inline-block;padding-block:8px}}
+
+.footer{background:#141414;color:#ccc;border-top:1px solid #333}.footer :global(.footer-top){display:block}.footer :global(.footer-top p){color:#aaa}.footer :global(.footer-top nav){display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px;margin-top:34px}.footer :global(.footer-info),.footer :global(.footer-bottom){color:#aaa}.footer :global(.footer-top nav)>div a{display:inline-block;min-height:28px}.footer :global(.footer-top nav)>div> a{color:white}.footer :global(.footer-top)>div>a{background:#fff}.footer :global(.footer-bottom){border-color:#333}@media(max-width:700px){.footer :global(.footer-top nav){grid-template-columns:1fr 1fr}.footer :global(.footer-top nav)>div a{min-height:44px}.footer{padding-bottom:28px}}
