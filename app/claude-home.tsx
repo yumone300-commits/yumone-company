@@ -41,8 +41,8 @@ function Company(){return (<section id="brand-intro" className={s.c17}>
 <div className={s.c26}>
 <div className={s.c27}><strong className={s.c28}>{"20년+"}</strong><span className={s.c29}>{"외식 프랜차이즈 본사"}{' '}<br/>{"마케팅 실무 경험"}</span></div>
 <div className={s.c30}><strong className={s.c28}>{"1,000명+"}</strong><span className={s.c29}>{"가맹점주"}{' '}<br/>{"교육 진행"}</span></div>
-<div className={s.c31}><strong className={s.c28}>{"200명+"}</strong><span className={s.c29}>{"최근 2년"}{' '}<br/>{"마케팅 컨설팅"}</span></div>
-<div className={s.c32}><p className={s.c33}>{"FOUNDER-LED"}</p><strong className={s.c34}>{"대표 직접 설계"}</strong><span className={s.c29}>{"진단부터 전략·실행"}{' '}<br/>{"방향까지"}</span></div>
+<div className={s.c31}><strong className={s.c28}>{"200명+"}</strong><span className={s.c29}>{"소상공인 1:1 맞춤"}{' '}<br/>{"마케팅 컨설팅"}</span></div>
+<div className={s.c32}><strong className={s.c28}>{"500명+"}</strong><span className={s.c29}>{"슈퍼바이저 대상"}{' '}<br/>{"마케팅 및 CS 강의"}</span></div>
 </div>
 </div>
 </div>
