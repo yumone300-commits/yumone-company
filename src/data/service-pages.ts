@@ -625,7 +625,7 @@ export const servicePages:Record<string,ServiceProfile>={
       "우리 매장 마케팅 실행 계획"
     ],
     "image": "/images/small-business-marketing-training.jpg",
-    "alt": "슈퍼바이저 마케팅 실무 교육 현장"
+    "alt": "소상공인 네이버 플레이스 마케팅 실습 교육 현장"
   },
   "/education/ai": {
     "href": "/education/ai",
