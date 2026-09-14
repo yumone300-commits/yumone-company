@@ -33,3 +33,10 @@
 .recruit .warm{background:#f6f6f4}.recruit .process li{border-top:1px solid var(--pilot-line)}
 @media(max-width:1000px){.recruit .heroColumns{gap:40px;grid-template-columns:1.7fr 1fr}.recruit .hero{padding:48px 0 60px}.recruit .heroActions{flex-direction:column;align-items:flex-start}.recruit .section{padding:80px 0}}
 @media(max-width:767px){.recruit .container{width:calc(100% - 48px)}.recruit .heroColumns{grid-template-columns:1fr;gap:38px}.recruit .hero{padding:32px 0 48px;min-height:0}.recruit .hero h1{font-size:clamp(32px,8.8vw,40px);line-height:1.23}.recruit .hero .lead{font-size:16px}.recruit .heroActions{align-items:stretch}.recruit .heroActions .button{width:100%}.recruit .heroFacts>div{padding:15px 0}.recruit .section{padding:64px 0}.recruit .numberedGrid,.recruit .grid,.recruit .process{grid-template-columns:1fr;gap:0}.recruit .grid{gap:18px}.recruit .numberedGrid{margin-top:32px}.recruit .numberedGrid>div{padding:24px 0}.recruit .closingNote{margin-top:32px;font-size:17px}.recruit .eyebrow{font-size:11px}.recruit .breadcrumb{font-size:11px;gap:7px;margin-bottom:28px}.recruit .process li{padding:24px 0}.recruit .inlineCTA{align-items:stretch;flex-direction:column}}
+/* Improve only the recruiting hero information panel. */
+.recruit .heroFacts{width:calc(100% + 56px);margin-left:-56px;align-self:center}
+.recruit .heroFacts>div{padding:24px 0;border-top-color:rgba(255,255,255,.15)}
+.recruit .heroFacts dt{font-size:18px;font-weight:700;letter-spacing:.09em;margin-bottom:16px}
+.recruit .heroFacts dd{font-size:20px;font-weight:550;line-height:1.6;color:#f0f0f0;word-break:keep-all;overflow-wrap:normal}
+@media(max-width:1100px){.recruit .heroFacts{width:100%;margin-left:0}.recruit .heroFacts dt{font-size:16px}.recruit .heroFacts dd{font-size:18px}.recruit .heroFacts>div{padding:20px 0}}
+@media(max-width:767px){.recruit .heroFacts dt{font-size:16px;margin-bottom:16px}.recruit .heroFacts dd{font-size:18px}.recruit .heroFacts>div{padding:22px 0}}
