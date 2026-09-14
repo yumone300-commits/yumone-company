@@ -136,12 +136,23 @@ function WorkMethod(){return (<section className={s.c57}>
 <strong className={s.c64}>{"AI 검색 최적화 설명"}</strong>
 <span className={s.c65}>{"검색과 AI 답변에서 브랜드가 정확히 이해되도록 전략을 설계합니다."}</span>
 </div>
-<div className={s.c61}>
-<div className={s.c62}>
-<img className={s.slotPhoto} src="/images/pdf-reference/how-work-mentoring.webp" alt="염원컴퍼니 현장 활동" loading="lazy"/>
+<div className={s.trainingPair}>
+<article className={s.trainingCard}>
+<div className={s.trainingImage}><img src="/images/supervisor-marketing-training.jpg" width="960" height="720" alt="프랜차이즈 슈퍼바이저 대상 마케팅 실습 강의 현장" loading="lazy" className={s.supervisorPhoto}/></div>
+<div className={s.trainingBody}>
+<h3>프랜차이즈 슈퍼바이저 마케팅 교육</h3>
+<p>가맹점의 매출과 온라인 경쟁력을 높일 수 있도록 네이버 플레이스, 블로그, SNS, 리뷰 관리 등 현장에서 바로 적용하는 마케팅 실무를 교육합니다.</p>
+<div className={s.trainingTopics}>가맹점 진단 · 온라인 마케팅 · 매출 개선 · 실습 교육</div>
 </div>
-<strong className={s.c64}>{"실무형 멘토링과 교육"}</strong>
-<span className={s.c65}>{"참여자가 직접 실행해 보는 실무형 멘토링과 교육을 진행합니다."}</span>
+</article>
+<article className={s.trainingCard}>
+<div className={s.trainingImage}><img src="/images/small-business-marketing-training.jpg" width="960" height="540" alt="소상공인과 함께 노트북으로 진행하는 마케팅 교육 현장" loading="lazy" className={s.smallBusinessPhoto}/></div>
+<div className={s.trainingBody}>
+<h3>소상공인 마케팅 교육</h3>
+<p>소상공인이 직접 고객을 유입하고 매출을 높일 수 있도록 네이버 플레이스, 블로그, SNS, AI 콘텐츠 제작을 중심으로 쉽고 실용적인 마케팅 방법을 교육합니다.</p>
+<div className={s.trainingTopics}>고객 유입 · 지역 마케팅 · 콘텐츠 제작 · AI 활용</div>
+</div>
+</article>
 </div>
 </div>
 <div className={s.c66}>
