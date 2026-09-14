@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import {Container,PageHero,SectionTitle,Photo,FinalCTA} from '@/components/ui';
-import {education} from '@/data/education';
+import {SitemapPage} from '@/components/sitemap-page';
+import {navigation} from '@/data/navigation';
 import {metadata as makeMetadata} from '@/lib/seo';
-export const metadata=makeMetadata('교육프로그램','SV, 가맹점주, 프랜차이즈 본사 직원과 AI 마케팅 담당자를 위한 현장 중심 실전 교육.','/education');
-export default function Education(){return <><PageHero eyebrow="EDUCATION" title={'현장에서 바로 쓰는\n프랜차이즈 실전 교육'} description="본사, SV, 가맹점주를 위한 맞춤형 교육으로 사람이 성장하는 조직을 만듭니다." image="education"/><section className="section"><Container><SectionTitle eyebrow="LEARNING TO ACTION" title={'가맹점 매출 활성화와\n실행력을 높이는 교육 프로그램'} description="대상과 현장의 과제를 먼저 확인하고, 업무에서 활용할 결과물을 함께 만듭니다."/><div className="detail-grid">{education.map((e,i)=><Link className="detail-card" href={`/education/${e.slug}`} key={e.slug}><span>0{i+1} / {e.eyebrow}</span><h3>{e.title}</h3><p>{e.summary}</p><span className="red-link">교육 자세히 보기 →</span></Link>)}</div></Container></section><section className="section soft"><Container className="split"><Photo name="education" alt="일반 교육 참고 사진 — 실제 염원컴퍼니 강의 현장이 아닙니다"/><div><p className="eyebrow">CUSTOMIZED PROGRAM</p><h2>우리 조직에 맞는 교육을<br/>함께 구성합니다.</h2><ul className="check-list"><li>교육 대상과 현장 과제 사전 파악</li><li>실무에 맞춘 사례 및 실습 구성</li><li>현장에서 사용할 실행 계획 정리</li></ul><p className="content-note">사진은 교육 이해를 돕는 참고 이미지입니다. 실제 강의 현장 사진은 준비 후 교체합니다.</p></div></Container></section><FinalCTA/></>}
+const group=navigation.find(g=>g.key==='education')!;
+export const metadata=makeMetadata(group.title,group.description,group.href);
+export default function Page(){return <SitemapPage href="/education"/>}

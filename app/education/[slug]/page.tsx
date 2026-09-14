@@ -1,8 +1,9 @@
 import {notFound} from 'next/navigation';
-import {education} from '@/data/education';
-import {Container,PageHero,SectionTitle,Button,Breadcrumb} from '@/components/ui';
-import {metadata,BreadSchema,JsonLd} from '@/lib/seo';
-import {site} from '@/data/site';
-export function generateStaticParams(){return education.map(e=>({slug:e.slug}))}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const e=education.find(e=>e.slug===slug);return e?metadata(e.title,e.summary,`/education/${slug}`):{}}
-export default async function EducationDetail({params}:{params:Promise<{slug:string}>}){const{slug}=await params;const e=education.find(e=>e.slug===slug);if(!e)notFound();const crumbs=[{label:'교육프로그램',href:'/education'},{label:e.title,href:`/education/${slug}`}];return <><PageHero eyebrow={e.eyebrow} title={e.title} description={e.summary} image="education"/><Breadcrumb items={crumbs}/><section className="section"><Container className="split"><div><p className="eyebrow">WHO IS IT FOR?</p><h2>교육 대상</h2><p className="muted">{e.audience}</p></div><div><p className="eyebrow">PRACTICAL OUTPUT</p><h2>교육 후 가져갈 결과물</h2><p className="muted">{e.output}</p></div></Container></section><section className="section soft"><Container><SectionTitle eyebrow="CURRICULUM" title="현장 과제를 중심으로 구성합니다."/><div className="steps">{e.modules.map((m,i)=><div className="step" key={m}><span>MODULE 0{i+1}</span><h3>{m}</h3></div>)}</div><p className="content-note">기본 커리큘럼 예시이며 교육 시간, 인원, 실습 수준은 사전 협의로 조정합니다.</p></Container></section><section className="section"><Container className="split"><div><p className="eyebrow">PROGRAM INQUIRY</p><h2>현장에 맞는 교육,<br/>지금 이야기해 주세요.</h2><p className="muted">교육 대상, 인원, 희망 일정과 현재 과제를 알려주시면 교육 범위를 함께 정리합니다.</p></div><Button href="/contact?service=education">기업·기관 출강 문의</Button></Container></section><BreadSchema items={crumbs}/><JsonLd data={{'@type':'Service',name:e.title,description:e.summary,provider:{'@id':site.url+'/#organization'},url:site.url+`/education/${slug}`}}/></>}
+import {navigation,legacyRoutes} from '@/data/navigation';
+import {SitemapPage} from '@/components/sitemap-page';
+import {metadata as makeMetadata} from '@/lib/seo';
+const group=navigation.find(g=>g.key==='education')!;
+export const dynamicParams=false;
+export function generateStaticParams(){return [...group.children.map(c=>c.href.split('/')[2]),'sv','franchisee','headquarters','ai-marketing'].map(slug=>({slug}))}
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}){const{slug}=await params;const href=legacyRoutes['/education/'+slug]||'/education/'+slug;const item=group.children.find(c=>c.href===href);return makeMetadata(item?.title||'교육',item?.description||group.description,href)}
+export default async function Page({params}:{params:Promise<{slug:string}>}){const{slug}=await params;const href=legacyRoutes['/education/'+slug]||'/education/'+slug;if(!group.children.some(c=>c.href===href))notFound();return <SitemapPage href={href}/>}

@@ -1,7 +1,4 @@
 import type {MetadataRoute} from 'next';
-import {site} from '@/data/site';
-import {services} from '@/data/services';
-import {education} from '@/data/education';
-import {insights} from '@/data/content';
+import {site} from '@/data/site';import {allNavigationPages} from '@/data/navigation';import {insights,cases} from '@/data/content';
 export const dynamic='force-static';
-export default function sitemap():MetadataRoute.Sitemap{return ['','/about','/services','/education','/cases','/insights','/contact',...services.map(s=>`/services/${s.slug}`),...education.map(s=>`/education/${s.slug}`),...insights.map(s=>`/insights/${s.slug}`)].map(path=>({url:site.url+path+'/',changeFrequency:'monthly',priority:path?0.7:1}))}
+export default function sitemap():MetadataRoute.Sitemap{return ['/',...allNavigationPages.map(p=>p.href),'/contact',...insights.map(i=>`/insight/column/${i.slug}`),...cases.map(i=>`/project/marketing/${i.slug}`)].map(path=>({url:site.url+(path==='/'?'/':path+'/'),changeFrequency:'monthly',priority:path==='/'?1:path.split('/').length===2?0.8:0.6}))}
