@@ -116,8 +116,18 @@
       "permanent": true
     },
     {
+      "source": "/insights/:slug/",
+      "destination": "/insight/column/:slug/",
+      "permanent": true
+    },
+    {
       "source": "/cases/:slug",
       "destination": "/project/marketing/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/cases/:slug/",
+      "destination": "/project/marketing/:slug/",
       "permanent": true
     }
   ]
