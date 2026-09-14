@@ -1,3 +1,4 @@
+import Link from 'next/link';
 /* Ported from the user-supplied Yumone Homepage.dc.html. Native React replaces DC runtime tags. */
 import {HomeInquiry} from './home-inquiry';
 import s from './claude-home.module.css';
@@ -14,8 +15,8 @@ function Hero(){return (<section className={s.c0}>
 <p className={s.c8}>{"광고 채널보다 먼저, 브랜드가 발견되고 비교되고"}{' '}<br/>{"상담으로 이어지는 구조가 필요합니다."}</p>
 <p className={s.c9}>{"염원컴퍼니는 프랜차이즈 본사 약 20년 실무 경험을"}{' '}<br/>{"바탕으로 검색·콘텐츠·광고·교육을 하나의"}{' '}<br/>{"성장 흐름으로 연결합니다."}</p>
 <div className={s.c10}>
-<a href="/contact" className={s.c11}>{"우리 브랜드 성장 진단받기"}</a>
-<a href="/franchise" className={s.c12}>{"서비스와 진행 방식 보기"}</a>
+<Link href="/contact" className={s.c11}>{"우리 브랜드 성장 진단받기"}</Link>
+<Link href="/franchise" className={s.c12}>{"서비스와 진행 방식 보기"}</Link>
 </div>
 <div aria-hidden="true" className={s.c13}></div>
 <div className={s.mobileOnly}><div aria-hidden="true" className={s.c14}></div></div>
@@ -35,7 +36,7 @@ function Company(){return (<section id="brand-intro" className={s.c17}>
 <p className={s.c21}>{"YUMONE COMPANY"}</p>
 <h2 className={s.c22}>{"프랜차이즈 현장을"}{' '}<br/>{"아는 사람이"}{' '}<br/>{"브랜드의 성장 전략을"}{' '}<br/>{"설계합니다."}</h2>
 <p className={s.c23}>{"염원컴퍼니는 광고 채널만 운영하는 대행사가 아닙니다."}{' '}<br/>{"외식 프랜차이즈 본사에서 약 20년간 쌓은 마케팅 실무 경험을 바탕으로 가맹문의, 브랜드 검색 노출, 가맹점 매출, 콘텐츠와 교육을 하나의 성장 구조로 연결합니다."}</p>
-<a href="/about/difference" className={s.c24}>{"염원컴퍼니의 차별점 보기 "}<span>{"→"}</span></a>
+<Link href="/about/difference" className={s.c24}>{"염원컴퍼니의 차별점 보기 "}<span>{"→"}</span></Link>
 </div>
 <div className={s.c25}>
 <div className={s.c26}>
@@ -97,7 +98,7 @@ function GrowthSystem(){return (<section id="growth-system" className={s.c35}>
 </div>
 <div className={s.c54}>
 <p className={s.c55}>{"진단에서 끝나지 않고, 실행 결과를 다시 분석해 다음 전략에 반영합니다."}</p>
-<a href="/contact" className={s.c56}>{"우리 브랜드의 막힌 지점 진단받기 "}<span>{"→"}</span></a>
+<Link href="/contact" className={s.c56}>{"우리 브랜드의 막힌 지점 진단받기 "}<span>{"→"}</span></Link>
 </div>
 </div>
 </section>)}
@@ -151,7 +152,7 @@ function WorkMethod(){return (<section className={s.c57}>
 </div>
 <div className={s.c66}>
 <p className={s.c67}>{"현장을 이해해야, 실제로 실행되는 성장 전략을 만들 수 있습니다."}</p>
-<a href="/contact" className={s.c68}>{"우리 브랜드 맞춤 성장 전략 상담하기 "}<span>{"→"}</span></a>
+<Link href="/contact" className={s.c68}>{"우리 브랜드 맞춤 성장 전략 상담하기 "}<span>{"→"}</span></Link>
 </div>
 </div>
 </section>)}
@@ -163,7 +164,7 @@ function WhyYumone(){return (<section id="why-yumone" className={s.c69}>
 <h2 className={s.c72}>{"프랜차이즈의 성과는"}{' '}<br/>{"광고 밖에서 결정됩니다."}</h2>
 <p className={s.c73}>{"가맹문의가 실제 상담과 계약으로 이어지고, 마케팅이 가맹점 매출로 연결되려면 브랜드 전략부터 본사 시스템과 현장 실행까지 함께 움직여야 합니다."}</p>
 <p className={s.c74}>{"염원컴퍼니는 광고 채널만 운영하지 않습니다."}{' '}<br/>{"브랜드가 지속적으로 성장할 수 있는 연결 구조를 설계합니다."}</p>
-<a href="/contact" className={s.c75}>{"우리 브랜드 성장 구조 진단받기 "}<span>{"→"}</span></a>
+<Link href="/contact" className={s.c75}>{"우리 브랜드 성장 구조 진단받기 "}<span>{"→"}</span></Link>
 </div>
 <div className={s.c76}>
 <div aria-hidden="true" className={s.c77}></div>
@@ -207,7 +208,7 @@ function Problems(){return (<section className={s.c69}>
 <span className={s.c92}></span>
 </div>
 </div>
-<a href="/contact" className={s.c75}>{"우리 브랜드의 막힌 지점 진단받기 "}<span>{"→"}</span></a>
+<Link href="/contact" className={s.c75}>{"우리 브랜드의 막힌 지점 진단받기 "}<span>{"→"}</span></Link>
 </div>
 <div className={s.c94}>
 <div className={s.c95}>
@@ -324,7 +325,7 @@ function GrowthJourney(){return (<section id="solution" className={s.c69}>
 <span className={s.c150}>{"상담 신청"}</span><span className={s.c151}></span>
 <span className={s.c150}>{"현장 실행"}</span>
 </div>
-<a href="/contact" className={s.c152}>{"우리 브랜드의 문의 전환 흐름 진단받기 "}<span>{"→"}</span></a>
+<Link href="/contact" className={s.c152}>{"우리 브랜드의 문의 전환 흐름 진단받기 "}<span>{"→"}</span></Link>
 </div>
 </div>
 </section>)}
@@ -335,7 +336,7 @@ function Services(){return (<section id="services" className={s.c153}>
 <h2 className={s.c156}>{"프랜차이즈 성장을 만드는"}{' '}<br/>{"8가지 실행 솔루션"}</h2>
 <p className={s.c157}>{"전략 수립부터 가맹점 모집, 매출 활성화, 콘텐츠 제작, 교육과 업무 시스템 구축까지 브랜드 성장 전 과정을 지원합니다."}</p>
 <div className={s.c158}>
-<a href="/franchise/diagnosis" className={s.c159}>
+<Link href="/franchise/diagnosis" className={s.c159}>
 <div className={s.c160}>
 <span className={s.c161}>{"01"}</span>
 <span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M6 21V10m5 11V4m5 17v-7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
@@ -343,8 +344,8 @@ function Services(){return (<section id="services" className={s.c153}>
 <h3 className={s.c163}>{"프랜차이즈 마케팅 전략"}</h3>
 <p className={s.c164}>{"가맹사업 단계와 브랜드 상황을 분석하고 필요한 마케팅의 우선순위를 설계합니다."}</p>
 <span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</a>
-<a href="/franchise/recruit" className={s.c159}>
+</Link>
+<Link href="/franchise/recruit" className={s.c159}>
 <div className={s.c160}>
 <span className={s.c161}>{"02"}</span>
 <span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.2" stroke="currentColor" strokeWidth="1.6"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 6v6m3-3h-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
@@ -352,8 +353,8 @@ function Services(){return (<section id="services" className={s.c153}>
 <h3 className={s.c163}>{"가맹문의·가맹모집 마케팅"}</h3>
 <p className={s.c164}>{"예비 창업자가 브랜드를 발견하고 비교한 뒤 상담을 신청하는 전환 구조를 만듭니다."}</p>
 <span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</a>
-<a href="/ai-search" className={s.c159}>
+</Link>
+<Link href="/ai-search" className={s.c159}>
 <span aria-hidden="true" className={s.c166}></span>
 <div className={s.c160}>
 <span className={s.c161}>{"03"}</span>
@@ -363,8 +364,8 @@ function Services(){return (<section id="services" className={s.c153}>
 <p className={s.c164}>{"네이버, 구글과 챗GPT 등 AI 검색에서 브랜드가 발견되고 정확히 이해되도록 개선합니다."}</p>
 <span className={s.c167}>{"CORE"}</span>
 <span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</a>
-<a href="/franchise/sales" className={s.c159}>
+</Link>
+<Link href="/franchise/sales" className={s.c159}>
 <div className={s.c160}>
 <span className={s.c161}>{"04"}</span>
 <span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 9h16v11H4zM3 9l2-5h14l2 5M9 20v-6h6v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"></path></svg></span>
@@ -372,8 +373,8 @@ function Services(){return (<section id="services" className={s.c153}>
 <h3 className={s.c163}>{"가맹점 매출 활성화"}</h3>
 <p className={s.c164}>{"플레이스, 블로그, 지역 콘텐츠와 프로모션을 통해 매장 단위의 고객 접점을 강화합니다."}</p>
 <span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</a>
-<a href="/content/shortform" className={s.c159}>
+</Link>
+<Link href="/content/shortform" className={s.c159}>
 <div className={s.c160}>
 <span className={s.c161}>{"05"}</span>
 <span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.6"></rect><path d="M15 11l6-3.5v9L15 13z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"></path></svg></span>
@@ -381,8 +382,8 @@ function Services(){return (<section id="services" className={s.c153}>
 <h3 className={s.c163}>{"숏폼·유튜브·홍보영상 제작"}</h3>
 <p className={s.c164}>{"브랜드 인지도와 고객 행동을 고려한 영상 콘텐츠를 기획하고 제작합니다."}</p>
 <span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</a>
-<a href="/education" className={s.c159}>
+</Link>
+<Link href="/education" className={s.c159}>
 <div className={s.c160}>
 <span className={s.c161}>{"06"}</span>
 <span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 4 2 9l10 5 10-5z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"></path><path d="M6 11.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
@@ -390,8 +391,8 @@ function Services(){return (<section id="services" className={s.c153}>
 <h3 className={s.c163}>{"프랜차이즈 실무 교육"}</h3>
 <p className={s.c164}>{"본사 직원, 슈퍼바이저와 가맹점주가 현장에서 바로 적용할 수 있는 교육을 제공합니다."}</p>
 <span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</a>
-<a href="/content/website" className={s.c159}>
+</Link>
+<Link href="/content/website" className={s.c159}>
 <div className={s.c160}>
 <span className={s.c161}>{"07"}</span>
 <span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6"></rect><path d="M3 9h18M7 6.5h.01M9.5 6.5h.01" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
@@ -399,8 +400,8 @@ function Services(){return (<section id="services" className={s.c153}>
 <h3 className={s.c163}>{"홈페이지·랜딩페이지 제작"}</h3>
 <p className={s.c164}>{"검색 노출과 상담 전환에 적합한 브랜드 정보 구조와 문의 동선을 만듭니다."}</p>
 <span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</a>
-<a href="/education/ai" className={s.c159}>
+</Link>
+<Link href="/education/ai" className={s.c159}>
 <span aria-hidden="true" className={s.c166}></span>
 <div className={s.c160}>
 <span className={s.c161}>{"08"}</span>
@@ -410,7 +411,7 @@ function Services(){return (<section id="services" className={s.c153}>
 <p className={s.c164}>{"담당자 개인 역량에 의존하지 않는 업무 프로세스와 AI 활용 체계를 구축합니다."}</p>
 <span className={s.c167}>{"CORE"}</span>
 <span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</a>
+</Link>
 </div>
 </div>
 </section>)}
@@ -419,7 +420,7 @@ function GrowthCTA(){return (<section className={s.c168}>
 <div className={s.c169}>
 <h2 className={s.c170}>{"모든 브랜드에"}{' '}<br/>{"같은 마케팅을 제안하지 않습니다."}</h2>
 <p className={s.c171}>{"업종, 가맹점 수, 예산과 목표를 먼저 확인하고 지금 가장 필요한 전략부터 제안합니다."}</p>
-<a href="/contact" className={s.c172}>{"우리 브랜드 우선순위 진단받기 "}<span>{"→"}</span></a>
+<Link href="/contact" className={s.c172}>{"우리 브랜드 우선순위 진단받기 "}<span>{"→"}</span></Link>
 <p className={s.c173}>{"프랜차이즈 본사와 다점포 브랜드를 위한 맞춤 진단"}</p>
 </div>
 </section>)}
@@ -454,7 +455,7 @@ function Founder(){return (<section id="founder" className={[s.c181,s.founder].j
 <span className={s.c191}>{"AI 기반 검색·콘텐츠 활용"}</span>
 </div>
 <strong className={s.c192}>{"염혜단 "}<small className={s.c193}>{"염원컴퍼니 대표"}</small></strong>
-<a href="/about/founder" className={s.c194}>{"염혜단 대표 소개 자세히 보기 "}<span>{"→"}</span></a>
+<Link href="/about/founder" className={s.c194}>{"염혜단 대표 소개 자세히 보기 "}<span>{"→"}</span></Link>
 </div>
 </section>)}
 
@@ -494,7 +495,7 @@ function Education(){return (<section id="education" className={s.c174}>
 </div>
 </div>
 <p className={s.c219}>{"교육 현장 자료는 확인 후 추가할 예정입니다."}</p>
-<a href="/contact" className={s.c220}>{"우리 회사에 맞는 교육 프로그램 문의하기 "}<span>{"→"}</span></a>
+<Link href="/contact" className={s.c220}>{"우리 회사에 맞는 교육 프로그램 문의하기 "}<span>{"→"}</span></Link>
 </div>
 </section>)}
 
@@ -529,8 +530,8 @@ function FinalCTA(){return (<section className={s.c57}>
 <h2 className={s.c231}>{"우리 브랜드에 지금 필요한 마케팅,"}{' '}<br/>{"진단부터 받아보세요."}</h2>
 <p className={s.c232}>{"가맹문의, 검색 노출, 가맹점 매출, 콘텐츠와 교육 중 무엇을 먼저 시작해야 할지 브랜드 상황에 맞춰 정리해드립니다."}</p>
 <div className={s.c233}>
-<a href="/contact" className={s.c234}>{"우리 브랜드 성장 진단받기 "}<span>{"→"}</span></a>
-<a href="/contact" className={s.c235}>{"맞춤 마케팅 제안서 요청하기"}</a>
+<Link href="/contact" className={s.c234}>{"우리 브랜드 성장 진단받기 "}<span>{"→"}</span></Link>
+<Link href="/contact" className={s.c235}>{"맞춤 마케팅 제안서 요청하기"}</Link>
 </div>
 <p className={s.c236}>{"카카오톡으로 상담하기 (연결 정보 확인 필요)"}</p>
 </div>
@@ -549,7 +550,7 @@ function Contact(){return (<section id="contact" className={s.c237}>
 export function ClaudeHome(){return <div id="top" className={s.page}><Hero/><Company/><GrowthSystem/><WorkMethod/><WhyYumone/><Problems/><GrowthJourney/><Services/><GrowthCTA/><Difference/><Founder/><Cases/><ContentHub/><Education/><Partners/><FAQ/><FinalCTA/><Contact/><ReferenceFooter/></div>}
 
 function ReferenceFooter(){return <footer className={s.referenceFooter}><div className={s.footerGrid}>
-<div><a href="/" aria-label="염원컴퍼니 홈"><img src="/images/yumone-logo-white.svg" alt="YUMONE COMPANY" width="200" height="69" style={{maxWidth:"100%",height:"auto",objectFit:"contain"}}/></a><p>프랜차이즈의 성장을<br/>현장에서 설계합니다.</p></div>
+<div><Link href="/" aria-label="염원컴퍼니 홈"><img src="/images/yumone-logo-white.svg" alt="YUMONE COMPANY" width="200" height="69" style={{maxWidth:"100%",height:"auto",objectFit:"contain"}}/></Link><p>프랜차이즈의 성장을<br/>현장에서 설계합니다.</p></div>
 <div><h3>COMPANY</h3><p>염원컴퍼니 · 대표 염혜단<br/>프랜차이즈 전문 마케팅·교육·컨설팅<br/>사업자등록번호 147-86-03066</p></div>
 <div><h3>CONTACT</h3><p><a href="tel:0269496859">T. 02-6949-6859</a><br/>F. 0504-491-9439<br/><a href="mailto:yumone300@gmail.com">yumone300@gmail.com</a><br/>서울시 서초구 남부순환로350길 11, 8층</p></div>
-<div><h3>CHANNEL</h3><a href="https://www.youtube.com/@프차언니/">프차언니 유튜브 ↗</a><br/><a href="https://www.instagram.com/fc_aunni/">인스타그램 ↗</a><br/><a href="https://blog.naver.com/yumone_company">공식 블로그 ↗</a></div></div><div className={s.footerBottom}><span>© YUMONE COMPANY. All rights reserved.</span><span><a href="/privacy">개인정보처리방침</a> · <a href="/terms">이용약관</a></span></div></footer>}
+<div><h3>CHANNEL</h3><a href="https://www.youtube.com/@프차언니/">프차언니 유튜브 ↗</a><br/><a href="https://www.instagram.com/fc_aunni/">인스타그램 ↗</a><br/><a href="https://blog.naver.com/yumone_company">공식 블로그 ↗</a></div></div><div className={s.footerBottom}><span>© YUMONE COMPANY. All rights reserved.</span><span><Link href="/privacy">개인정보처리방침</Link> · <Link href="/terms">이용약관</Link></span></div></footer>}
