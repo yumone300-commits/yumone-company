@@ -1,4 +1,4 @@
-import {QualityLegal} from '@/components/site-pages';
+import {Container,Button} from '@/components/ui';
 import {metadata as makeMetadata} from '@/lib/seo';
-export const metadata={...makeMetadata('홈페이지 이용 안내','서비스 제공 범위, 업무 구성 예시와 문의 이용 방법을 안내합니다.','/terms'),robots:{index:false,follow:true}};
-export default function Page(){return <QualityLegal privacy={false}/>}
+export const metadata={...makeMetadata('이용약관','염원컴퍼니 홈페이지 이용 안내 — 운영 전 검토용 초안','/terms'),robots:{index:false,follow:true}};
+export default function Terms(){return <Container><article className="article"><p className="eyebrow">TERMS</p><h1>이용약관</h1><p className="mock-notice">실제 운영 전 검토용 초안입니다. 확정 약관은 운영 정책 확인 후 게시합니다.</p><section><h2>홈페이지의 목적</h2><p>염원컴퍼니의 서비스, 교육 프로그램, 콘텐츠와 상담 절차를 안내합니다. 개별 프로젝트의 범위, 비용과 일정은 별도 협의로 확정합니다.</p></section><section><h2>미리보기 콘텐츠</h2><p>구성 예시로 표시된 성공사례는 실제 프로젝트나 성과를 의미하지 않습니다. 일반 참고 사진은 회사의 실제 사업장, 직원 또는 고객을 나타내지 않습니다. 모의 상담 제출은 실제 접수가 아닙니다.</p></section><section><h2>공개 전 검토</h2><p>콘텐츠 이용 범위, 서비스 이용 기준, 문의 창구 및 시행일은 운영 정책과 함께 확정해야 합니다.</p></section><Button secondary href="/">홈으로 돌아가기</Button></article></Container>}

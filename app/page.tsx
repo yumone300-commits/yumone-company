@@ -1,4 +1,4 @@
-import {QualityHome} from '@/components/site-pages';
+import {ClaudeHome} from './claude-home';
 import {metadata as makeMetadata} from '@/lib/seo';
-export const metadata=makeMetadata('프랜차이즈 마케팅·교육','가맹모집 콘텐츠와 광고 운영부터 본사·SV·점주 교육까지. 필요한 업무와 우선순위를 정하고 실행을 함께합니다.','/');
-export default function Home(){return <QualityHome/>}
+export const metadata={...makeMetadata('프랜차이즈 마케팅·교육·컨설팅','20년 현장 경험으로 가맹모집과 가맹점 매출, AI 검색과 교육을 연결합니다. 염원컴퍼니의 성장 전략을 만나보세요.','/'),alternates:{canonical:'https://yumone-company-db74.vercel.app/'}};
+export default function Home(){return <ClaudeHome/>}
