@@ -1,8 +1,5 @@
-import Link from 'next/link';
-import {contactHref,type NavigationGroup,type NavigationItem} from '@/data/navigation';
+import {type NavigationGroup,type NavigationItem} from '@/data/navigation';
 import s from './sitemap-page.module.css';
-
-export function SubpageHero({group,detail}:{group:NavigationGroup;detail:NavigationItem}){return <section className={s.hero}><div className={s.container}><nav className={s.breadcrumb} aria-label="현재 위치"><Link href="/">홈</Link><span>/</span><Link href={group.href}>{group.title}</Link><span>/</span><span aria-current="page">{detail.title}</span></nav><div className={s.heroColumns}><div><p className={s.eyebrow}>FRANCHISE RECRUITING</p><h1>예비 창업자의 질문을<br/><em>가맹 상담</em>으로<br/>연결합니다.</h1><p className={s.lead}>{detail.problem}<br/>{group.description}</p><div className={s.heroActions}><Link className={s.button} href={contactHref(group.key)}>가맹모집 마케팅 진단받기 <span aria-hidden="true">→</span></Link><a className={`${s.button} ${s.secondary}`} href="#recruit-scope">실행 업무 범위 보기</a></div></div><dl className={s.heroFacts}><div><dt>WHO IT’S FOR</dt><dd>{group.audience}</dd></div><div><dt>BASED ON</dt><dd>20년+ 프랜차이즈 현장 경험</dd></div><div><dt>DESIGNED BY</dt><dd>염원컴퍼니 · 프랜차이즈 마케팅·교육·컨설팅</dd></div></dl></div></div></section>}
 
 export function NumberedGrid({items}:{items:{title:string;description:string}[]}){return <div className={s.numberedGrid}>{items.map((item,i)=><div key={item.title}><span>{String(i+1).padStart(2,'0')}</span><h3>{item.title}</h3><p>{item.description}</p></div>)}</div>}
 

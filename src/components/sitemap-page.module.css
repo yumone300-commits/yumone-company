@@ -40,3 +40,5 @@
 .recruit .heroFacts dd{font-size:20px;font-weight:550;line-height:1.6;color:#f0f0f0;word-break:keep-all;overflow-wrap:normal}
 @media(max-width:1100px){.recruit .heroFacts{width:100%;margin-left:0}.recruit .heroFacts dt{font-size:16px}.recruit .heroFacts dd{font-size:18px}.recruit .heroFacts>div{padding:20px 0}}
 @media(max-width:767px){.recruit .heroFacts dt{font-size:16px;margin-bottom:16px}.recruit .heroFacts dd{font-size:18px}.recruit .heroFacts>div{padding:22px 0}}
+
+.article[id],.section[id]{scroll-margin-top:120px}
