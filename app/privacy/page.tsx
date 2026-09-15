@@ -1,4 +1,4 @@
-import {Container,Button} from '@/components/ui';
+import {QualityLegal} from '@/components/site-pages';
 import {metadata as makeMetadata} from '@/lib/seo';
-export const metadata={...makeMetadata('개인정보처리방침','염원컴퍼니 홈페이지 개인정보 처리 안내 — 운영 전 검토용 초안','/privacy'),robots:{index:false,follow:true}};
-export default function Privacy(){return <Container><article className="article"><p className="eyebrow">PRIVACY</p><h1>개인정보처리방침</h1><p className="mock-notice">운영 전 검토용 초안입니다. 현재 상담 폼은 모의 제출이며 입력 정보를 저장하거나 전송하지 않습니다.</p><section><h2>현재 미리보기의 처리 방식</h2><p>상담 폼 입력값은 현재 화면에서 유효성 확인에만 사용합니다. 이메일, CRM, 외부 API로 전송하거나 브라우저 저장소에 기록하지 않습니다. 다만 실제 배포 플랫폼의 접속 로그 처리는 플랫폼 정책을 확인해야 합니다.</p></section><section><h2>실제 접수 전 확정할 항목</h2><ul className="check-list"><li>수집 목적과 필수·선택 항목: 프로젝트 상담에 필요한 최소 범위</li><li>보유·이용 기간, 파기 절차: TODO</li><li>처리위탁·국외이전 여부와 수탁자: TODO</li><li>개인정보 보호 담당자 및 권리 행사 연락처: TODO</li><li>시행일 및 변경 고지 방식: TODO</li></ul></section><Button secondary href="/contact">상담 페이지로 돌아가기</Button></article></Container>}
+export const metadata={...makeMetadata('개인정보처리방침','현재 문의 작성 화면의 정보 처리 방식과 운영 정책 확인 범위를 안내합니다.','/privacy'),robots:{index:false,follow:true}};
+export default function Page(){return <QualityLegal privacy/>}
