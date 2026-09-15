@@ -13,33 +13,118 @@ export const photos:Record<PhotoKey,{src:string;alt:string;caption:string;width:
  camera:{src:'/images/pdf-reference/journey-content-shoot.webp',alt:'인물 인터뷰 촬영 화면을 확인하는 카메라 모니터',caption:'제공된 촬영 모니터 자료',width:167,height:296},
  mentor:{src:'/images/pdf-reference/how-work-mentoring.webp',alt:'현장 과제를 함께 살펴보는 멘토링 장면',caption:'제공된 멘토링 활동 자료',width:422,height:317},
 };
-export type Journey={title:string;heading:string;lines:string[];kind:'social'|'web'|'form'|'report';photo?:PhotoKey};
-type GroupCopy={label:string;before:string;emphasis:string;description:string;cta:string;hero:PhotoKey;challenge:PhotoKey;challengeTitle:string;problems:string[];bridge:string;journeyTitle:string;journeyDescription:string;journey:Journey[];scopeTitle:string;trustTitle:string;trustText:string;finalTitle:string;finalText:string;finalCta:string};
-export const serviceGroups:Record<string,GroupCopy>={
- franchise:{label:'프랜차이즈 본사를 위한 마케팅 실행 파트너',before:'광고는 하고 있는데,',emphasis:'가맹 상담은 왜 늘지 않을까요?',description:'브랜드를 알리는 콘텐츠부터 가맹모집 페이지, 광고 운영까지. 예비 점주가 우리 브랜드를 이해하고 상담을 신청하는 과정을 함께 점검하고 실행합니다.',cta:'우리 브랜드 상황 상담하기',hero:'owner',challenge:'workshop',challengeTitle:'혹시, 우리 본사도 이런 상황인가요?',problems:['광고비는 나가는데, 어떤 광고가 상담으로 이어지는지 모르겠어요.','문의는 오지만, 우리 브랜드와 맞는 예비 점주가 적어요.','블로그도 SNS도 하는데, 채널마다 브랜드 설명이 달라요.','담당자는 바쁜데, 무엇부터 바꿔야 할지 정리가 안 돼요.'],bridge:'이 고민이 있다면, 지금 필요한 것은 고객이 어디에서 관심을 잃는지 확인하는 일입니다.',journeyTitle:'예비 점주는 광고 하나만 보고 상담하지 않습니다.',journeyDescription:'브랜드를 발견하고, 검색하고, 다른 브랜드와 비교합니다. 그 과정에서 필요한 정보를 찾고 믿을 수 있어야 상담으로 이어집니다.',journey:[{title:'브랜드 발견',heading:'이 메뉴, 우리 동네에도 있으면',lines:['메뉴의 특징을 보여주는 짧은 영상','브랜드를 처음 만나는 콘텐츠'],kind:'social',photo:'food'},{title:'검색·비교',heading:'우리 브랜드를 선택하는 이유',lines:['어떤 고객이 찾는 매장인가요?','다른 브랜드와 무엇이 다른가요?'],kind:'web',photo:'shoot'},{title:'창업 정보 확인',heading:'매장을 운영한다는 것',lines:['운영 지원과 교육 안내','창업 조건과 확인할 자료'],kind:'web',photo:'workshop'},{title:'상담 신청',heading:'내 상황에 맞는 상담',lines:['브랜드명 / 관심 지역','궁금한 점 / 연락 방법'],kind:'form'}],scopeTitle:'지금 막힌 부분부터, 필요한 일을 함께합니다.',trustTitle:'본사의 계획이 현장에서 실행되려면, 현장을 알아야 합니다.',trustText:'프랜차이즈 마케팅은 본사의 목표와 가맹점의 현실을 함께 이해해야 합니다. 염원컴퍼니는 현장에서 쌓은 경험을 바탕으로 지금 실행할 수 있는 일을 함께 정리합니다.',finalTitle:'어디서부터 바꿔야 할지,\n혼자 정리하지 않으셔도 됩니다.',finalText:'브랜드명과 현재 가장 어려운 점을 남겨주세요. 지금 상황에서 필요한 마케팅과 실행 범위를 함께 살펴보겠습니다.',finalCta:'우리 브랜드 고민 이야기하기'},
- 'ai-search':{label:'검색과 AI 답변 속 브랜드 정보를 점검합니다',before:'고객이 AI에게 묻는 순간,',emphasis:'우리 브랜드는 어떻게 소개되고 있을까요?',description:'홈페이지와 브랜드 정보를 정리하고, 고객의 질문에 답하는 콘텐츠를 설계합니다. 잘못된 정보와 빠진 설명부터 확인해 검색과 AI가 참고할 공식 자료를 정비합니다.',cta:'우리 브랜드 정보 상담하기',hero:'ai',challenge:'consult',challengeTitle:'브랜드에 대한 설명, 직접 확인해 보셨나요?',problems:['검색해도 우리 서비스가 무엇인지 한눈에 보이지 않아요.','AI가 오래된 주소나 다른 회사 정보를 알려줘요.','고객이 매번 같은 질문을 하는데, 홈페이지에는 답이 없어요.','SEO, AEO, GEO 중 무엇부터 해야 할지 모르겠어요.'],bridge:'노출 횟수보다 먼저, 고객이 확인할 공식 정보가 정확하고 충분한지 살펴봅니다.',journeyTitle:'고객의 질문에서 공식 자료까지, 연결을 확인합니다.',journeyDescription:'질문을 모으고, 답할 자료를 찾고, 홈페이지에 설명합니다. 실제 답변은 질문과 시점에 따라 달라지므로 관찰 기록을 남겨 점검합니다.',journey:[{title:'질문 수집',heading:'고객이 묻는 것부터',lines:['어떤 업무를 맡길 수 있나요?','어떤 자료가 필요한가요?'],kind:'report'},{title:'공식 정보 대조',heading:'브랜드 정보 점검표',lines:['회사명·서비스·연락처 일치','근거 자료와 최근 검토일'],kind:'report'},{title:'답변 콘텐츠',heading:'한 질문에 명확한 설명',lines:['결론부터 짧게 답하기','조건과 확인할 출처 안내'],kind:'web',photo:'consult'},{title:'변화 점검',heading:'답변 관찰 기록',lines:['질문 / 확인 날짜 / 출처','잘못된 정보와 보완할 자료'],kind:'report'}],scopeTitle:'검색 순위 약속보다, 고칠 수 있는 정보부터.',trustTitle:'도구의 이름보다, 브랜드를 정확히 설명하는 자료가 먼저입니다.',trustText:'상담에서 반복되는 질문과 실제 제공하는 서비스를 함께 읽습니다. 현장 언어로 정보를 정리하고 담당자가 계속 갱신할 수 있는 기준을 남깁니다.',finalTitle:'우리 브랜드는\n어떻게 설명되고 있나요?',finalText:'홈페이지 주소와 신경 쓰이는 검색·AI 답변 내용을 알려주세요. 확인할 정보와 개선 범위를 함께 정리합니다.',finalCta:'브랜드 정보 점검 상담하기'},
- content:{label:'고객이 선택할 이유를 담는 콘텐츠 제작',before:'콘텐츠는 계속 올리는데,',emphasis:'고객이 왜 우리를 선택해야 하는지는 보이나요?',description:'매장과 메뉴, 브랜드의 강점을 사진·영상·글로 구체적으로 보여줍니다. 어디에 쓰일 콘텐츠인지 먼저 정하고 기획부터 촬영, 편집, 문의 연결까지 협의합니다.',cta:'필요한 콘텐츠 이야기하기',hero:'shoot',challenge:'camera',challengeTitle:'채널은 채워지는데, 설명은 부족하지 않나요?',problems:['사진은 많은데 브랜드의 차별점이 보이지 않아요.','영상마다 말투와 메시지가 달라요.','홈페이지를 봐도 고객은 무엇을 물어봐야 할지 몰라요.','한 번 촬영한 자료를 여러 채널에서 활용하고 싶어요.'],bridge:'만들 수 있는 형식보다, 고객에게 보여줄 장면과 전달할 이유를 먼저 정합니다.',journeyTitle:'한 가지 강점을, 고객이 만나는 화면마다 분명하게.',journeyDescription:'같은 원고를 복사하지 않습니다. 홈페이지, 블로그, 짧은 영상에서 고객이 확인하려는 내용을 형식에 맞게 구성합니다.',journey:[{title:'기획',heading:'촬영 전에 정할 것',lines:['누가 / 어디서 / 왜 보는가','전달할 핵심 메시지 한 가지'],kind:'report'},{title:'촬영',heading:'말 대신 보여줄 장면',lines:['메뉴의 특징과 매장 경험','인터뷰와 실제 작업 과정'],kind:'social',photo:'food'},{title:'편집·제작',heading:'고객의 질문에 답하는 구성',lines:['첫 장면 / 핵심 설명 / 다음 행동','채널별 화면 비율과 자막'],kind:'web',photo:'camera'},{title:'활용',heading:'관심 다음의 행동까지',lines:['상세 서비스 확인','방문·상담 화면으로 연결'],kind:'form'}],scopeTitle:'전달할 내용에 맞춰, 필요한 형식으로 만듭니다.',trustTitle:'현장을 보고, 고객이 이해할 장면을 찾습니다.',trustText:'메뉴와 매장의 특징, 직원이 설명하는 운영 방식을 콘텐츠의 소재로 삼습니다. 실제로 보여줄 수 있는 강점을 골라 기획과 촬영에 반영합니다.',finalTitle:'보여주고 싶은 강점이 있다면,\n어떤 콘텐츠가 필요할지 함께 정해요.',finalText:'소개할 서비스나 메뉴, 사용할 채널과 보유 자료를 알려주세요. 필요한 촬영과 제작 범위를 구체화합니다.',finalCta:'콘텐츠 제작 상담하기'},
- education:{label:'본사·SV·점주·소상공인을 위한 실무 교육',before:'배운 내용을,',emphasis:'내일 우리 현장에서 쓸 수 있도록.',description:'본사 직원, 슈퍼바이저, 점주가 맡은 일은 다릅니다. 참여자의 실제 업무와 매장 자료를 바탕으로 문제를 정리하고 실행할 일을 만드는 교육을 진행합니다.',cta:'우리 조직 교육 상담하기',hero:'training',challenge:'owner',challengeTitle:'교육 이후, 무엇을 바꾸면 될지 보이나요?',problems:['강의는 좋았는데 우리 업무에는 어떻게 적용하죠?','점주가 묻는 매출과 마케팅 질문에 답하기 어려워요.','직원마다 익숙한 도구와 실무 수준이 달라요.','교육이 끝나면 실제로 써볼 자료가 남았으면 해요.'],bridge:'교육의 출발점은 커리큘럼 목록이 아니라, 참여자가 지금 해결해야 할 일입니다.',journeyTitle:'듣고 끝내지 않고, 내 자료로 직접 만들어 봅니다.',journeyDescription:'현장 과제를 가져와 실습하고 동료와 검토합니다. 교육 주제와 난이도, 활용할 결과물은 참여자에 맞춰 조정합니다.',journey:[{title:'과제 가져오기',heading:'우리 매장의 현재 모습',lines:['고객이 자주 묻는 질문','개선하고 싶은 업무 한 가지'],kind:'social',photo:'owner'},{title:'함께 살펴보기',heading:'무엇이 문제일까요?',lines:['현황과 원인을 구분하기','바로 바꿀 수 있는 일 찾기'],kind:'web',photo:'workshop'},{title:'직접 실습하기',heading:'내 업무용 워크북',lines:['상담 문구 / 콘텐츠 초안','방문 체크리스트 / 실행 계획'],kind:'report'},{title:'적용 계획 세우기',heading:'교육 후 실행할 한 가지',lines:['누가 / 무엇을 / 어떻게','현장에서 확인할 항목'],kind:'report'}],scopeTitle:'본사와 현장, 맡은 역할에 맞는 교육을 선택하세요.',trustTitle:'현장의 질문이, 교육의 내용이 됩니다.',trustText:'본사·SV·점주 교육과 자영업자 컨설팅 경험을 바탕으로 참여자의 역할에 맞는 사례와 실습을 구성합니다. 매장에서 쓸 말과 실행할 행동까지 함께 정리합니다.',finalTitle:'우리 직원과 점주에게,\n지금 어떤 교육이 필요할까요?',finalText:'참여 대상과 인원, 가장 어려운 업무를 알려주세요. 필요한 주제와 실습 범위를 함께 정리합니다.',finalCta:'맞춤 교육 이야기하기'},
-};
-
+type GroupCopy={label:string;before:string;emphasis:string;description:string;cta:string;audience:string;work:string;situations:string[];questions:string[];prepare:string;evidence:string;basis:string;photo?:PhotoKey};
 type DetailCopy={before:string;emphasis:string;description:string;photo:PhotoKey;checks:string[];sampleTitle:string};
+export const serviceGroups:Record<string,GroupCopy>={
+  "franchise": {
+    "label": "프랜차이즈 본사를 위한 마케팅",
+    "before": "가맹모집부터 브랜드 운영까지,",
+    "emphasis": "본사에 필요한 마케팅을 함께 실행합니다.",
+    "description": "해야 할 일은 많은데, 내부 인력만으로 진행하기 어려우신가요? 현재 운영 상황을 살펴보고 콘텐츠 제작, 가맹모집 페이지, 광고 운영 중 필요한 업무와 우선순위를 정합니다.",
+    "cta": "마케팅 상담하기",
+    "audience": "마케팅 실행과 가맹점 지원을 함께 관리하는 프랜차이즈 본사",
+    "work": "현황 진단 · 가맹모집 · 매장 마케팅 · 광고 운영",
+    "situations": [
+      "내부 담당자와 외부 실행사의 업무 범위를 정해야 하는 본사",
+      "가맹모집 콘텐츠와 상담 동선을 함께 정비하려는 본사",
+      "본사 기준과 점포별 마케팅 실행을 연결하려는 본사"
+    ],
+    "questions": [
+      "현재 운영하는 채널과 담당자는 누구인가요?",
+      "우선 정비할 업무는 가맹모집인가요, 매장 지원인가요?",
+      "내부에서 진행할 일과 외부에 맡길 일은 무엇인가요?"
+    ],
+    "prepare": "홈페이지·운영 채널 주소, 기존 광고·콘텐츠 자료, 우선 해결할 과제",
+    "evidence": "본사와 가맹점의 역할을 함께 이해합니다.",
+    "basis": "프랜차이즈 마케팅·교육 및 자영업자 컨설팅 경험을 바탕으로 본사가 정할 기준과 매장에서 실행할 일을 구분합니다.",
+    "photo": "ai"
+  },
+  "ai-search": {
+    "label": "공식 브랜드 정보를 정비하는 AI 검색 마케팅",
+    "before": "검색과 AI가 참고할 정보를,",
+    "emphasis": "정확하고 일관되게 정리합니다.",
+    "description": "홈페이지와 공식 소개 자료를 대조하고 고객의 질문에 답하는 콘텐츠를 구성합니다. 검색·AI 답변에서 확인한 정보와 출처를 기록해 정비할 항목을 정합니다.",
+    "cta": "AI 검색 마케팅 상담하기",
+    "audience": "검색과 AI 답변에 나타나는 브랜드 정보를 관리하려는 본사 담당자",
+    "work": "SEO · 질문형 콘텐츠 · 공식 정보 정비 · 노출 현황 진단",
+    "situations": [
+      "채널마다 다른 회사·서비스 정보를 정리하려는 담당자",
+      "고객 질문에 대한 공식 답변 자료를 갖추려는 담당자",
+      "검색·AI 답변의 오류와 누락을 점검하려는 담당자"
+    ],
+    "questions": [
+      "공식 회사·서비스 정보는 어디에 정리되어 있나요?",
+      "고객이 반복해서 묻는 질문은 무엇인가요?",
+      "현재 검색·AI 답변에서 수정할 정보가 있나요?"
+    ],
+    "prepare": "홈페이지 주소, 공식 소개 자료, 점검할 질문과 실제 답변 화면",
+    "evidence": "브랜드의 실제 업무와 공개 자료를 함께 읽습니다.",
+    "basis": "기존 회사 소개에 안내된 AI 기반 프랜차이즈 마케팅 연구·교육 활동을 바탕으로, 브랜드가 실제 제공하는 업무와 공개 정보의 일치 여부를 살펴봅니다. 노출·추천·검색 순위를 보장하지 않습니다."
+  },
+  "content": {
+    "label": "프랜차이즈 본사의 콘텐츠 제작·운영",
+    "before": "브랜드의 강점과 서비스 정보를,",
+    "emphasis": "채널에 맞는 콘텐츠로 제작합니다.",
+    "description": "홈페이지, 블로그, 영상에서 전달할 핵심 내용을 먼저 정합니다. 보유 자료와 활용 목적을 확인하고 기획·촬영·편집·운영 중 필요한 범위를 협의합니다.",
+    "cta": "콘텐츠 제작 상담하기",
+    "audience": "브랜드 메시지와 제작·운영 일정을 관리하는 본사 담당자",
+    "work": "홈페이지 · 블로그·플레이스 · 숏폼 · 브랜드 영상",
+    "situations": [
+      "여러 채널의 브랜드 설명을 일관되게 정리하려는 본사",
+      "기획부터 제작까지 외부 실행이 필요한 담당자",
+      "보유 사진·영상의 활용 범위와 추가 제작을 정하려는 담당자"
+    ],
+    "questions": [
+      "어떤 고객에게 어떤 정보를 전달하려 하나요?",
+      "활용할 채널과 필요한 제작 형식은 무엇인가요?",
+      "보유 자료와 새로 촬영할 자료는 무엇인가요?"
+    ],
+    "prepare": "브랜드 소개, 보유 사진·영상, 활용 채널, 참고 화면",
+    "evidence": "기획과 실제 촬영 과정을 연결합니다.",
+    "basis": "기존 콘텐츠 촬영 자료에서 확인할 수 있는 인터뷰·현장 촬영 활동을 바탕으로, 전달할 메시지와 필요한 장면을 먼저 정리합니다.",
+    "photo": "shoot"
+  },
+  "education": {
+    "label": "프랜차이즈 본사·SV·점주를 위한 실무 교육",
+    "before": "역할별 업무 과제를 중심으로,",
+    "emphasis": "현장에 적용할 실무를 교육합니다.",
+    "description": "본사 직원, 슈퍼바이저, 점주의 업무와 실무 수준을 확인합니다. 가맹점 방문, 점주 상담, 콘텐츠 작성 등 필요한 주제를 정하고 실제 업무 자료로 실습합니다.",
+    "cta": "교육 상담하기",
+    "audience": "본사 직원·SV·점주 교육을 기획하는 담당자와 소상공인",
+    "work": "본사 직원 교육 · SV 실무 · 점주 마케팅 · AI 활용",
+    "situations": [
+      "본사 직원과 SV의 공통 업무 기준을 만들려는 담당자",
+      "점주가 매장에서 적용할 마케팅 실습을 준비하는 담당자",
+      "참여자 수준에 맞는 AI·업무 도구 교육이 필요한 조직"
+    ],
+    "questions": [
+      "참여자는 어떤 업무를 맡고 있나요?",
+      "교육 후 현장에서 적용할 과제는 무엇인가요?",
+      "실습할 자료와 노트북·도구가 준비되어 있나요?"
+    ],
+    "prepare": "교육 대상·인원, 업무 과제, 보유 자료, 실습 도구·환경",
+    "evidence": "본사·SV·가맹점주 교육 경험을 활용합니다.",
+    "basis": "기존 회사 소개에 안내된 본사·SV·가맹점주 교육 경험을 바탕으로 참여자의 역할에 맞는 주제와 실습 자료를 구성합니다.",
+    "photo": "training"
+  }
+};
 export const detailCopy:Record<string,DetailCopy>={
- '/franchise/diagnosis':{before:'무엇부터 바꿔야 할지',emphasis:'막막하다면',description:'홈페이지, 광고, 콘텐츠를 함께 살펴보고 고객이 정보를 찾거나 상담을 신청할 때 막히는 지점을 확인합니다. 먼저 손봐야 할 일을 정리합니다.',photo:'consult',checks:['고객 유입 경로','브랜드 설명','상담 동선'],sampleTitle:'고객 흐름 진단표'},
- '/franchise/recruit':{before:'브랜드 소개에서 끝나지 않고,',emphasis:'창업자의 질문에 답하도록.',description:'예비 점주가 궁금해하는 창업 정보, 운영 지원, 브랜드 차별점을 정리하고 콘텐츠와 상세페이지, 광고에서 일관되게 전달합니다.',photo:'shoot',checks:['가맹모집 메시지','상세페이지','광고 연결'],sampleTitle:'가맹모집 페이지 구성안'},
- '/franchise/sales':{before:'우리 동네 고객이',emphasis:'매장을 선택할 이유를 만듭니다.',description:'상권과 방문 시간대, 주요 메뉴를 살펴보고 매장 사진과 지역 콘텐츠, 프로모션을 연결해 방문할 이유를 구체적으로 보여줍니다.',photo:'food',checks:['매장 강점','지역 콘텐츠','방문 유도'],sampleTitle:'지역 고객 콘텐츠 기획안'},
- '/franchise/ads':{before:'광고비가 어디에 쓰이고,',emphasis:'무엇을 바꾸는지 알 수 있게.',description:'클릭 수와 함께 실제 문의와 연결되는 흐름을 살펴봅니다. 운영 내용을 공유하고 다음에 조정할 일을 제안합니다.',photo:'workshop',checks:['운영 현황','문의 흐름','개선 제안'],sampleTitle:'광고 운영 점검 보고서'},
- '/ai-search/seo':{before:'검색해서 들어온 고객이,',emphasis:'필요한 정보를 찾을 수 있나요?',description:'서비스 설명과 페이지 제목, 내부 링크를 함께 점검합니다. 검색이 이해할 구조와 고객이 읽을 내용을 정리합니다.',photo:'consult',checks:['페이지 제목','콘텐츠 구조','내부 연결'],sampleTitle:'페이지별 SEO 점검표'},
- '/ai-search/aeo':{before:'고객이 반복해서 묻는 질문,',emphasis:'홈페이지가 먼저 답하도록.',description:'상담 질문을 모아 짧은 답변과 자세한 설명을 구성합니다. 확인할 수 있는 근거와 함께 FAQ와 서비스 페이지에 반영합니다.',photo:'mentor',checks:['고객 질문','답변과 근거','FAQ 구성'],sampleTitle:'질문·답변 콘텐츠 초안'},
- '/ai-search/geo':{before:'AI가 참고할 브랜드 자료,',emphasis:'한 가지 기준으로 정리합니다.',description:'채널마다 다른 소개와 오래된 자료를 대조합니다. 공식 출처와 갱신 기준을 정해 브랜드의 정보를 일관되게 관리합니다.',photo:'ai',checks:['공식 출처','정보 일관성','갱신 기준'],sampleTitle:'공식 정보·출처 관리표'},
- '/ai-search/diagnosis':{before:'AI가 알려주는 우리 정보,',emphasis:'어디가 잘못됐는지부터.',description:'브랜드 관련 질문과 실제 답변을 기록하고 공식 자료와 대조합니다. 빠진 설명과 잘못된 정보를 구분해 정비할 항목을 찾습니다.',photo:'workshop',checks:['브랜드 질문','답변 기록','공식 자료 대조'],sampleTitle:'검색·AI 답변 관찰표'},
- '/content/website':{before:'홈페이지를 읽은 고객이,',emphasis:'다음 행동을 찾을 수 있도록.',description:'서비스를 이해하고 근거를 확인한 뒤 문의하는 흐름을 설계합니다. 모바일에서도 설명과 상담 버튼을 쉽게 찾을 수 있게 구성합니다.',photo:'consult',checks:['정보 구조','PC·모바일 화면','문의 연결'],sampleTitle:'서비스 랜딩페이지 구성안'},
- '/content/naver':{before:'블로그와 플레이스에서,',emphasis:'우리 매장의 강점이 보이도록.',description:'메뉴와 매장 정보, 지역 고객의 질문을 콘텐츠로 정리합니다. 게시물과 매장 기본 정보가 서로 다르지 않은지 함께 확인합니다.',photo:'food',checks:['매장 기본 정보','지역 콘텐츠','게시·관리 기준'],sampleTitle:'매장 소개 콘텐츠 기획안'},
- '/content/shortform':{before:'짧은 영상에도,',emphasis:'고객이 기억할 이유가 필요합니다.',description:'첫 장면에서 보여줄 강점을 고르고 촬영 장면과 자막을 구성합니다. 쇼츠·릴스 등 활용 채널에 맞춰 편집 범위를 협의합니다.',photo:'camera',checks:['첫 장면','촬영·자막 구성','채널별 편집'],sampleTitle:'숏폼 장면별 스토리보드'},
- '/content/brand-film':{before:'말로 설명하던 브랜드를,',emphasis:'장면으로 이해하게 만듭니다.',description:'브랜드 이야기와 인터뷰, 실제 운영 과정을 영상으로 정리합니다. 홍보와 교육 중 활용 목적에 맞춰 기획·촬영·편집을 진행합니다.',photo:'shoot',checks:['브랜드 이야기','인터뷰·현장 촬영','목적별 편집'],sampleTitle:'브랜드 영상 구성안'},
- '/education/hq':{before:'마케팅팀과 운영팀이,',emphasis:'같은 고객을 보고 일하도록.',description:'가맹모집부터 매장 실행까지 고객의 흐름을 함께 읽습니다. 부서별 자료와 업무를 연결하고 협업할 과제를 정리하는 교육입니다.',photo:'training',checks:['고객 여정','부서 간 협업','성과 점검'],sampleTitle:'본사 협업 과제 워크북'},
- '/education/supervisor':{before:'점주가 “그래서 뭘 하면 되죠?”라고 물을 때,',emphasis:'답할 수 있는 교육.',description:'가맹점의 상황을 읽고, 문제를 정리하고, 실행할 일을 제안하는 실무를 다룹니다. 방문 보고와 점주 상담을 현장 과제로 연습합니다.',photo:'training',checks:['매장 진단','점주 커뮤니케이션','실행 제안'],sampleTitle:'SV 방문·상담 워크북'},
- '/education/owner':{before:'강의는 들었는데,',emphasis:'우리 가게에 어떻게 적용할지 막막하셨나요?',description:'우리 매장의 사진과 메뉴, 고객의 질문으로 직접 콘텐츠를 만들어보는 실습형 교육입니다. 점주와 소상공인이 매장에서 시도할 실행 계획을 정리합니다.',photo:'owner',checks:['매장 정보','콘텐츠 실습','실행 계획'],sampleTitle:'우리 매장 콘텐츠 실습지'},
- '/education/ai':{before:'AI에 질문은 해봤는데,',emphasis:'내 업무에는 어떻게 쓸까요?',description:'브랜드 자료를 넣어 콘텐츠 초안을 만들고, 결과를 검토하는 방법을 익힙니다. 반복 업무에 적용할 프롬프트와 확인 기준을 직접 정리합니다.',photo:'ai',checks:['업무별 프롬프트','결과 검토','반복 업무 적용'],sampleTitle:'AI 업무 프롬프트 워크북'},
+ '/franchise/diagnosis':{before:'마케팅 현황을 점검하고,',emphasis:'실행 우선순위를 정리합니다.',description:'홈페이지, 광고, 콘텐츠를 함께 살펴보고 고객이 정보를 찾거나 상담을 신청할 때 막히는 지점을 확인합니다. 먼저 손봐야 할 일을 정리합니다.',photo:'consult',checks:['고객 유입 경로','브랜드 설명','상담 동선'],sampleTitle:'고객 흐름 진단표'},
+ '/franchise/recruit':{before:'창업자가 확인할 정보를,',emphasis:'가맹모집 콘텐츠로 정리합니다.',description:'예비 점주가 궁금해하는 창업 정보, 운영 지원, 브랜드 차별점을 정리하고 콘텐츠와 상세페이지, 광고에서 일관되게 전달합니다.',photo:'shoot',checks:['가맹모집 메시지','상세페이지','광고 연결'],sampleTitle:'가맹모집 페이지 구성안'},
+ '/franchise/sales':{before:'가맹점의 운영 여건에 맞춰,',emphasis:'지역 마케팅을 실행합니다.',description:'상권과 방문 시간대, 주요 메뉴를 살펴보고 매장 사진과 지역 콘텐츠, 프로모션을 연결해 방문할 이유를 구체적으로 보여줍니다.',photo:'food',checks:['매장 강점','지역 콘텐츠','방문 유도'],sampleTitle:'지역 고객 콘텐츠 기획안'},
+ '/franchise/ads':{before:'운영 중인 광고와',emphasis:'문의 흐름을 함께 점검합니다.',description:'클릭 수와 함께 실제 문의와 연결되는 흐름을 살펴봅니다. 운영 내용을 공유하고 다음에 조정할 일을 제안합니다.',photo:'workshop',checks:['운영 현황','문의 흐름','개선 제안'],sampleTitle:'광고 운영 점검 보고서'},
+ '/ai-search/seo':{before:'서비스 정보를 찾기 쉽게,',emphasis:'페이지 구조와 콘텐츠를 정비합니다.',description:'서비스 설명과 페이지 제목, 내부 링크를 함께 점검합니다. 검색이 이해할 구조와 고객이 읽을 내용을 정리합니다.',photo:'consult',checks:['페이지 제목','콘텐츠 구조','내부 연결'],sampleTitle:'페이지별 SEO 점검표'},
+ '/ai-search/aeo':{before:'고객의 질문에 답하는',emphasis:'콘텐츠와 FAQ를 구성합니다.',description:'상담 질문을 모아 짧은 답변과 자세한 설명을 구성합니다. 확인할 수 있는 근거와 함께 FAQ와 서비스 페이지에 반영합니다.',photo:'mentor',checks:['고객 질문','답변과 근거','FAQ 구성'],sampleTitle:'질문·답변 콘텐츠 초안'},
+ '/ai-search/geo':{before:'AI가 참고할 공식 정보를',emphasis:'일관된 기준으로 정리합니다.',description:'채널마다 다른 소개와 오래된 자료를 대조합니다. 공식 출처와 갱신 기준을 정해 브랜드의 정보를 일관되게 관리합니다.',photo:'ai',checks:['공식 출처','정보 일관성','갱신 기준'],sampleTitle:'공식 정보·출처 관리표'},
+ '/ai-search/diagnosis':{before:'검색·AI 답변을 기록하고,',emphasis:'공식 정보와 대조합니다.',description:'브랜드 관련 질문과 실제 답변을 기록하고 공식 자료와 대조합니다. 빠진 설명과 잘못된 정보를 구분해 정비할 항목을 찾습니다.',photo:'workshop',checks:['브랜드 질문','답변 기록','공식 자료 대조'],sampleTitle:'검색·AI 답변 관찰표'},
+ '/content/website':{before:'서비스 설명부터 문의까지,',emphasis:'홈페이지의 흐름을 설계합니다.',description:'서비스를 이해하고 근거를 확인한 뒤 문의하는 흐름을 설계합니다. 모바일에서도 설명과 상담 버튼을 쉽게 찾을 수 있게 구성합니다.',photo:'consult',checks:['정보 구조','PC·모바일 화면','문의 연결'],sampleTitle:'서비스 랜딩페이지 구성안'},
+ '/content/naver':{before:'매장 정보와 지역 콘텐츠를',emphasis:'일관되게 운영합니다.',description:'메뉴와 매장 정보, 지역 고객의 질문을 콘텐츠로 정리합니다. 게시물과 매장 기본 정보가 서로 다르지 않은지 함께 확인합니다.',photo:'food',checks:['매장 기본 정보','지역 콘텐츠','게시·관리 기준'],sampleTitle:'매장 소개 콘텐츠 기획안'},
+ '/content/shortform':{before:'핵심 메시지에 맞춰',emphasis:'숏폼 영상을 기획·제작합니다.',description:'첫 장면에서 보여줄 강점을 고르고 촬영 장면과 자막을 구성합니다. 쇼츠·릴스 등 활용 채널에 맞춰 편집 범위를 협의합니다.',photo:'camera',checks:['첫 장면','촬영·자막 구성','채널별 편집'],sampleTitle:'숏폼 장면별 스토리보드'},
+ '/content/brand-film':{before:'브랜드와 운영 현장을 담는',emphasis:'홍보영상을 제작합니다.',description:'브랜드 이야기와 인터뷰, 실제 운영 과정을 영상으로 정리합니다. 홍보와 교육 중 활용 목적에 맞춰 기획·촬영·편집을 진행합니다.',photo:'shoot',checks:['브랜드 이야기','인터뷰·현장 촬영','목적별 편집'],sampleTitle:'브랜드 영상 구성안'},
+ '/education/hq':{before:'본사 마케팅과 운영 업무에',emphasis:'적용하는 실무 교육.',description:'가맹모집부터 매장 실행까지 고객의 흐름을 함께 읽습니다. 부서별 자료와 업무를 연결하고 협업할 과제를 정리하는 교육입니다.',photo:'training',checks:['고객 여정','부서 간 협업','성과 점검'],sampleTitle:'본사 협업 과제 워크북'},
+ '/education/supervisor':{before:'가맹점 방문과 점주 상담에',emphasis:'적용하는 SV 실무 교육.',description:'가맹점의 상황을 읽고, 문제를 정리하고, 실행할 일을 제안하는 실무를 다룹니다. 방문 보고와 점주 상담을 현장 과제로 연습합니다.',photo:'training',checks:['매장 진단','점주 커뮤니케이션','실행 제안'],sampleTitle:'SV 방문·상담 워크북'},
+ '/education/owner':{before:'우리 매장 자료로 실습하는',emphasis:'점주·소상공인 마케팅 교육.',description:'우리 매장의 사진과 메뉴, 고객의 질문으로 직접 콘텐츠를 만들어보는 실습형 교육입니다. 점주와 소상공인이 매장에서 시도할 실행 계획을 정리합니다.',photo:'owner',checks:['매장 정보','콘텐츠 실습','실행 계획'],sampleTitle:'우리 매장 콘텐츠 실습지'},
+ '/education/ai':{before:'콘텐츠 작성과 반복 업무에',emphasis:'적용하는 AI 실무 교육.',description:'브랜드 자료를 넣어 콘텐츠 초안을 만들고, 결과를 검토하는 방법을 익힙니다. 반복 업무에 적용할 프롬프트와 확인 기준을 직접 정리합니다.',photo:'ai',checks:['업무별 프롬프트','결과 검토','반복 업무 적용'],sampleTitle:'AI 업무 프롬프트 워크북'},
 };
 export function experienceProfile(href:string){
  const group=navigation.find(g=>href===g.href||g.children.some(c=>c.href===href));
