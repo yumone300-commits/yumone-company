@@ -1,7 +1,9 @@
 import {Suspense} from 'react';
-import {Container,PageHero} from '@/components/ui';
+import {QualityHero} from '@/components/site-pages';
 import {ContactForm} from '@/components/contact-form';
-import {site} from '@/data/site';
+import {companyContact} from '@/data/navigation';
 import {metadata as makeMetadata} from '@/lib/seo';
-export const metadata=makeMetadata('프로젝트 상담 신청','프랜차이즈 마케팅, AI 검색, 컨설팅과 교육 상담. 브랜드의 현재 과제와 성장 방향을 염원컴퍼니와 함께 정리하세요.','/contact');
-export default function Contact(){return <><PageHero eyebrow="CONTACT YUMONE" title={'지금, 염원컴퍼니와\n이야기해 주세요.'} description="브랜드의 성장을 위한 첫걸음, 상담이 시작입니다." image="marketing"/><section className="section"><Container className="contact-layout"><aside className="contact-aside"><p className="eyebrow">YOUR NEXT STEP</p><h2>우리 브랜드의<br/>다음 성장을 위해.</h2><p className="muted">현재의 고민부터 이야기해 주세요.<br/>필요한 서비스와 실행 방향을 함께 정리합니다.</p><ol className="contact-steps"><li><span>01</span><div><h3>브랜드 현황 확인</h3><p>성장 단계와 현재의 과제를 확인합니다.</p></div></li><li><span>02</span><div><h3>필요한 방향 정리</h3><p>마케팅·교육·검색의 연결점을 살펴봅니다.</p></div></li><li><span>03</span><div><h3>맞춤 프로젝트 제안</h3><p>범위와 일정은 상담 후 협의합니다.</p></div></li></ol>{site.phone&&<p><a href={`tel:${site.phone.replaceAll("-","")}`}>전화 {site.phone}</a></p>}{site.email&&<p><a href={`mailto:${site.email}`}>{site.email}</a></p>}{site.address&&<p>{site.address}</p>}</aside><Suspense fallback={<p>상담 양식을 준비하고 있습니다.</p>}><ContactForm/></Suspense></Container></section></>}
+import s from '@/components/site-quality.module.css';
+import f from '@/components/inquiry.module.css';
+export const metadata=makeMetadata('마케팅·교육 상담 안내','필요한 마케팅·교육 업무를 전화 또는 이메일로 문의하세요. 서비스별 문의 내용을 정리할 수 있습니다.','/contact');
+export default function Contact(){return <div className={s.page} data-quality="site-v2"><QualityHero href="/contact" label="상담 안내"/><section className={s.section}><div className={`${s.container} ${f.layout}`}><aside className={f.aside}><h2>전화 또는 이메일로 문의하세요.</h2><p><a className={f.plainLink} href={`tel:${companyContact.tel}`}>전화 {companyContact.phone}</a><br/><a className={f.plainLink} href={`mailto:${companyContact.email}`}>{companyContact.email}</a></p><h3>문의 후 확인할 내용</h3><ol className={f.steps}><li>현재 운영 상황과 우선 해결할 과제</li><li>검토할 자료와 내부 담당자의 역할</li><li>의뢰할 범위와 진행 일정</li></ol><p>예산이나 일정이 미정이어도 괜찮습니다. 준비된 내용부터 알려주세요.</p></aside><Suspense fallback={<p>문의 작성 화면을 준비하고 있습니다.</p>}><ContactForm/></Suspense></div></section></div>}

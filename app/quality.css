@@ -1,0 +1,5 @@
+/* Shared readability and navigation refinements for all canonical and legacy pages. */
+html{scroll-padding-top:95px}body{color:#222}a{text-underline-offset:5px}main{min-width:0}main p{overflow-wrap:break-word}main .article{font-size:18px;line-height:1.85}main .article h1{font-size:36px}main .article h2{font-size:27px}.footer .footer-top p{font-size:16px}.footer .footer-info{font-size:14px}.footer .footer-top nav>div>div{font-size:14px!important}.footer a{min-height:30px}.contact-layout{align-items:start}
+@media(max-width:760px){html{scroll-padding-top:78px}main .article{font-size:16px}main .article h1{font-size:29px}main .article h2{font-size:24px}.footer .footer-top p,.footer .footer-top nav>div>div{font-size:16px!important}.footer .footer-info{font-size:14px}.footer .footer-top nav a{display:inline-block;padding:5px 0}.footer .footer-bottom{padding-bottom:24px}}
+
+html { scroll-behavior: auto; }
