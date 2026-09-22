@@ -2,6 +2,7 @@ import Link from 'next/link';
 /* Ported from the user-supplied Yumone Homepage.dc.html. Native React replaces DC runtime tags. */
 import {HomeInquiry} from './home-inquiry';
 import s from './claude-home.module.css';
+import {HomeServiceCards} from './home-service-cards';
 
 function Hero(){return (<section className={s.c0}>
 <div className={s.desktopOnly}>
@@ -334,85 +335,8 @@ function Services(){return (<section id="services" className={s.c153}>
 <div className={s.c18}>
 <p className={s.c154}><span className={s.c155}></span>{"WHAT WE DO"}</p>
 <h2 className={s.c156}>{"프랜차이즈 성장을 만드는"}{' '}<br/>{"8가지 실행 솔루션"}</h2>
-<p className={s.c157}>{"전략 수립부터 가맹점 모집, 매출 활성화, 콘텐츠 제작, 교육과 업무 시스템 구축까지 브랜드 성장 전 과정을 지원합니다."}</p>
-<div className={s.c158}>
-<Link href="/franchise/diagnosis" className={s.c159}>
-<div className={s.c160}>
-<span className={s.c161}>{"01"}</span>
-<span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 21h18M6 21V10m5 11V4m5 17v-7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
-</div>
-<h3 className={s.c163}>{"프랜차이즈 마케팅 전략"}</h3>
-<p className={s.c164}>{"가맹사업 단계와 브랜드 상황을 분석하고 필요한 마케팅의 우선순위를 설계합니다."}</p>
-<span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</Link>
-<Link href="/franchise/recruit" className={s.c159}>
-<div className={s.c160}>
-<span className={s.c161}>{"02"}</span>
-<span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="8" r="3.2" stroke="currentColor" strokeWidth="1.6"></circle><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 6v6m3-3h-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
-</div>
-<h3 className={s.c163}>{"가맹문의·가맹모집 마케팅"}</h3>
-<p className={s.c164}>{"예비 창업자가 브랜드를 발견하고 비교한 뒤 상담을 신청하는 전환 구조를 만듭니다."}</p>
-<span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</Link>
-<Link href="/ai-search" className={s.c159}>
-<span aria-hidden="true" className={s.c166}></span>
-<div className={s.c160}>
-<span className={s.c161}>{"03"}</span>
-<span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.6"></circle><path d="M15.5 15.5 21 21M8 10.5h5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
-</div>
-<h3 className={s.c163}>{"SEO·AEO·GEO 마케팅"}</h3>
-<p className={s.c164}>{"네이버, 구글과 챗GPT 등 AI 검색에서 브랜드가 발견되고 정확히 이해되도록 개선합니다."}</p>
-<span className={s.c167}>{"CORE"}</span>
-<span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</Link>
-<Link href="/franchise/sales" className={s.c159}>
-<div className={s.c160}>
-<span className={s.c161}>{"04"}</span>
-<span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 9h16v11H4zM3 9l2-5h14l2 5M9 20v-6h6v6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"></path></svg></span>
-</div>
-<h3 className={s.c163}>{"가맹점 매출 활성화"}</h3>
-<p className={s.c164}>{"플레이스, 블로그, 지역 콘텐츠와 프로모션을 통해 매장 단위의 고객 접점을 강화합니다."}</p>
-<span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</Link>
-<Link href="/content/shortform" className={s.c159}>
-<div className={s.c160}>
-<span className={s.c161}>{"05"}</span>
-<span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="12" height="12" rx="2" stroke="currentColor" strokeWidth="1.6"></rect><path d="M15 11l6-3.5v9L15 13z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"></path></svg></span>
-</div>
-<h3 className={s.c163}>{"숏폼·유튜브·홍보영상 제작"}</h3>
-<p className={s.c164}>{"브랜드 인지도와 고객 행동을 고려한 영상 콘텐츠를 기획하고 제작합니다."}</p>
-<span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</Link>
-<Link href="/education" className={s.c159}>
-<div className={s.c160}>
-<span className={s.c161}>{"06"}</span>
-<span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 4 2 9l10 5 10-5z" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round"></path><path d="M6 11.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
-</div>
-<h3 className={s.c163}>{"프랜차이즈 실무 교육"}</h3>
-<p className={s.c164}>{"본사 직원, 슈퍼바이저와 가맹점주가 현장에서 바로 적용할 수 있는 교육을 제공합니다."}</p>
-<span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</Link>
-<Link href="/content/website" className={s.c159}>
-<div className={s.c160}>
-<span className={s.c161}>{"07"}</span>
-<span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.6"></rect><path d="M3 9h18M7 6.5h.01M9.5 6.5h.01" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
-</div>
-<h3 className={s.c163}>{"홈페이지·랜딩페이지 제작"}</h3>
-<p className={s.c164}>{"검색 노출과 상담 전환에 적합한 브랜드 정보 구조와 문의 동선을 만듭니다."}</p>
-<span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</Link>
-<Link href="/education/ai" className={s.c159}>
-<span aria-hidden="true" className={s.c166}></span>
-<div className={s.c160}>
-<span className={s.c161}>{"08"}</span>
-<span aria-hidden="true" className={s.c162}><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 15.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" stroke="currentColor" strokeWidth="1.6"></path><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"></path></svg></span>
-</div>
-<h3 className={s.c163}>{"본사 시스템 및 업무 자동화"}</h3>
-<p className={s.c164}>{"담당자 개인 역량에 의존하지 않는 업무 프로세스와 AI 활용 체계를 구축합니다."}</p>
-<span className={s.c167}>{"CORE"}</span>
-<span className={s.c165}>{"자세히 보기 "}<span aria-hidden="true" className={s.c7}>{"→"}</span></span>
-</Link>
-</div>
+<p className={s.c157}>{"우리 브랜드에 필요한 서비스를 골라보세요."}</p>
+<HomeServiceCards/>
 </div>
 </section>)}
 
