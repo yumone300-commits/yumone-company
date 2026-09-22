@@ -1,0 +1,6 @@
+.figure{position:relative;margin:0;width:100%;min-width:0}
+.frame{position:relative;width:100%;aspect-ratio:1.25;overflow:hidden}
+.image{display:block;width:100%;height:100%;object-fit:cover;object-position:var(--focus,65% 50%)}
+.frame:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#151515 0%,transparent 27%,transparent 94%,#151515 100%),linear-gradient(0deg,#151515 0%,transparent 18%,transparent 88%,#151515 100%)}
+.caption{color:#aaa;font-size:11px;line-height:1.5;text-align:right;padding:6px 10px 0}
+@media(max-width:760px){.frame{aspect-ratio:1.5}.image{object-position:var(--mobile-focus,65% 50%)}.frame:after{background:linear-gradient(90deg,#151515 0%,transparent 12%,transparent 95%,#151515 100%),linear-gradient(0deg,#151515 0%,transparent 15%,transparent 92%,#151515 100%)}.caption{font-size:10px;padding-top:3px}}
