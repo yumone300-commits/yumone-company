@@ -1,4 +1,6 @@
 import type {Metadata} from 'next';
+import Link from 'next/link';
+import {Fragment} from 'react';
 import {site} from '@/data/site';
 import {pageSEO} from '@/data/page-seo';
 import {allNavigationPages} from '@/data/navigation';
@@ -21,5 +23,10 @@ export function metadata(title:string,description:string,path:string):Metadata {
     twitter:{card:'summary_large_image',title:socialTitle,description:socialDescription,images:[{url:image,alt:custom?name:share.imageAlt}]}};
 }
 export function JsonLd({data}:{data:Record<string,unknown>}){return <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org',...data}).replace(/</g,'\\u003c')}}/>}
-export function BreadSchema({items}:{items:{label:string;href:string}[]}){return <JsonLd data={{'@type':'BreadcrumbList',itemListElement:[{label:'홈',href:'/'},...items].map((x,i)=>({'@type':'ListItem',position:i+1,name:x.label,item:site.url+x.href}))}}/>}
+export function BreadSchema({items}:{items:{label:string;href:string}[]}){return <JsonLd data={{'@type':'BreadcrumbList',itemListElement:[{label:'홈',href:'/'},...items].map((x,i)=>({'@type':'ListItem',position:i+1,name:x.label,item:new URL(x.href==='/'?'/':x.href.replace(/\/$/,'')+'/',site.url).href}))}}/>}
 
+
+// One source for the visible path and server-rendered structured data. Items omit the implicit home.
+export function BreadcrumbTrail({items,className}:{items:{label:string;href:string}[];className?:string}) {
+ return <><nav className={className} aria-label="현재 위치"><Link href="/">홈</Link>{items.map((item,index)=><Fragment key={item.href}><span aria-hidden="true">/</span>{index===items.length-1?<span aria-current="page">{item.label}</span>:<Link href={item.href}>{item.label}</Link>}</Fragment>)}</nav><BreadSchema items={items}/></>;
+}
