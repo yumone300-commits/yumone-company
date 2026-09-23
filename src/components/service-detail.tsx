@@ -6,7 +6,7 @@ import {services} from '@/data/services';
 import {cases} from '@/data/content';
 import {site} from '@/data/site';
 import {type ServiceProfile} from '@/data/service-pages';
-import {JsonLd,BreadSchema} from '@/lib/seo';
+import {JsonLd} from '@/lib/seo';
 import base from './sitemap-page.module.css';
 import s from './service-detail.module.css';
 
@@ -18,7 +18,7 @@ export function ServiceDetail({profile:p}:{profile:ServiceProfile}){
  const faqs=[...p.faq,{q:`${p.title} 상담 전에 무엇을 준비하나요?`,a:`${p.audience}의 현재 과제를 알려주세요. ${p.scope[0]}에 활용할 수 있는 자료와 운영 채널을 준비하면 범위를 구체화할 수 있습니다.`},{q:'기간과 비용, 최종 산출물은 어떻게 정하나요?',a:`${p.outputs.join(', ')}를 중심으로 필요한 범위를 협의합니다. 제공 자료와 작업량, 참여자 및 검수 일정을 확인해 제안하며 계약 범위 밖의 작업은 별도로 합의합니다.`}];
  const source=p.href==='/franchise/diagnosis'?services.find(x=>x.slug==='consulting'):p.href==='/franchise/sales'?services.find(x=>x.slug==='marketing'):p.href==='/ai-search/diagnosis'?services.find(x=>x.slug==='ai-search'):p.href==='/content/brand-film'?services.find(x=>x.slug==='franchise'):undefined;
  return <div className={`${base.page} ${base.recruit} ${s.page}`}>
- <BreadSchema items={detail?[{label:group.title,href:group.href},{label:p.title,href:p.href}]:[{label:p.title,href:p.href}]}/>
+ 
  {p.group!=='project'&&<JsonLd data={{'@type':'Service',name:p.title,description:p.description,url:site.url+p.href+'/',provider:{'@id':site.url+'/#organization'}}}/>}
  <SubpageHero href={p.href} sectionId="service-scope"/>
  <section className={base.section}><div className={base.container}><p className={base.eyebrow}>01 / CUSTOMER CHALLENGE</p><h2>{p.title},<br/>이 지점에서 막히고 있나요?</h2><div className={base.numberedGrid}>{p.problems.map((x,i)=><div key={x}><span>0{i+1}</span><h3>{x}</h3></div>)}</div></div></section>

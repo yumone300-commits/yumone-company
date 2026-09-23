@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import {BreadcrumbTrail} from '@/lib/seo';
 import type {ReactNode} from 'react';
 import {navigation,contactHref} from '@/data/navigation';
 import {getHeroCopy,type HeroCopy} from '@/data/subpage-hero';
@@ -12,7 +13,7 @@ export function SubpageHero({href,sectionId,editorial,copy:override}:{href:strin
  const current=editorial?.title||child?.title||group.title;
  return <section className={s.banner} aria-labelledby="subpage-title">
   <div className={s.container}>
-   <nav className={s.breadcrumb} aria-label="현재 위치"><Link href="/">홈</Link><span aria-hidden="true">/</span>{href!==group.href&&<><Link href={group.href}>{group.title}</Link><span aria-hidden="true">/</span></>}{editorial&&child&&<><Link href={child.href}>{child.title}</Link><span aria-hidden="true">/</span></>}<span aria-current="page">{current}</span></nav>
+   <BreadcrumbTrail className={s.breadcrumb} items={[...(href!==group.href?[{label:group.title,href:group.href}]:[]),...(editorial&&child?[{label:child.title,href:child.href}]:[]),{label:current,href}]}/>
    <div className={`${s.columns} ${editorial?s.editorial:''}`}>
     <div className={s.copy}>
      <p className={s.label}>{editorial?.label||copy.eyebrow}</p>
