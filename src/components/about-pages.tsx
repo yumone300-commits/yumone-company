@@ -1,3 +1,4 @@
+import {ClientsSection} from './clients-section';
 import Image from 'next/image';
 import Link from 'next/link';
 import type {ReactNode} from 'react';
@@ -68,7 +69,7 @@ export function AboutPage({kind}: {kind: 'company' | 'founder'}) {
     <BreadSchema items={[{label: '염원컴퍼니', href: '/about'}, {label: isCompany ? '회사 소개' : '대표 소개', href}]}/>
     <SubpageHero href={href} sectionId={`${kind}-story`} copy={{before: isCompany ? '본사와 가맹점이 함께 성장하는 길,' : '현장을 이해하는 경험,', emphasis: isCompany ? '염원컴퍼니가' : '함께 성장하는', after: isCompany ? ' 연결합니다.' : ' 마케팅으로.', description: copy.description, secondary: isCompany ? '회사 이야기 보기' : '대표 인사말 보기'}}/>
     <AboutNav href={href}/>
-    {isCompany ? <CompanyContent/> : <FounderContent/>}
+    {isCompany ? <><CompanyContent/><ClientsSection withCTA={false}/></> : <FounderContent/>}
     <section className={s.final}><div className={s.container}><div><h2>필요한 업무가 아직 정리되지 않았어도 괜찮습니다.</h2><p>현재 운영 상황과 가장 해결하고 싶은 문제를 알려주세요.<br/>검토할 자료와 진행 범위를 함께 정리하겠습니다.</p></div><Link className={s.button} href="/contact/">우리 회사 상황 상담하기 <span aria-hidden="true">→</span></Link></div></section>
   </div>;
 }
