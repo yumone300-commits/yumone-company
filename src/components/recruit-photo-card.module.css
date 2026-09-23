@@ -1,0 +1,36 @@
+.card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px #00000004;
+}
+.image { position: relative; }
+.image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+}
+.image span {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 8px;
+  border-radius: 2px;
+  background: #fffffff2;
+  color: #666;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.card figcaption { padding: 14px 18px 16px; }
+.card strong { display: block; font-size: 18px; line-height: 1.5; font-weight: 700; letter-spacing: -.03em; }
+.card figcaption p { margin: 4px 0 0; font-size: 13px; line-height: 1.6; color: #666; }
+@media (max-width: 760px) {
+  .card figcaption { padding: 12px 14px 14px; }
+  .card strong { font-size: 17px; }
+  .card figcaption p { font-size: 12px; }
+}
