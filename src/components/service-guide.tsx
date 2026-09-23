@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import photo from './recruit-photo-card.module.css';
 import {ServiceHeroPhoto} from './service-hero-photo';
 import Link from 'next/link';
 import {navigation, contactHref, companyContact} from '@/data/navigation';
@@ -24,9 +26,9 @@ function Paper({p, compact = false}: {p: ServiceGuide; compact?: boolean}) {
 }
 
 const recruitSituations = [
-  {title:'광고를 봐도 문의하지 않습니다.', check:'누구에게 어떤 메시지를 보여주는가', work:'광고 타깃과 소재 점검', label:'광고 카드 · 구성 예시', items:['모집하려는 창업자','브랜드 선택 이유','확인할 창업 조건']},
-  {title:'홈페이지를 봐도 판단하기 어렵습니다.', check:'비용·운영 조건·본사 지원이 충분한가', work:'가맹모집 페이지와 FAQ 보강', label:'모집 페이지 · 구성 예시', items:['창업비용과 포함 항목','운영 조건과 본사 지원','자주 묻는 질문']},
-  {title:'문의 후 상담이 이어지지 않습니다.', check:'신청 이후 안내와 응대가 준비되어 있는가', work:'상담 안내와 응대 자료 정리', label:'상담 체크리스트 · 구성 예시', items:['신청 이후 안내 사항','담당자가 확인할 질문','상담에 필요한 자료']},
+  {title:'광고를 봐도 문의하지 않습니다.', check:'누구에게 어떤 메시지를 보여주는가', work:'광고 타깃과 소재 점검', image:'/images/recruit-examples/advertising.webp', caption:'창업자의 관심을 끄는 광고', keywords:'타깃 설정 · 브랜드 선택 이유 · 창업 조건', alt:'매장과 메뉴 사진이 있는 가맹모집 광고를 스마트폰으로 살펴보는 손'},
+  {title:'홈페이지를 봐도 판단하기 어렵습니다.', check:'비용·운영 조건·본사 지원이 충분한가', work:'가맹모집 페이지와 FAQ 보강', image:'/images/recruit-examples/website.webp', caption:'창업 판단에 필요한 정보를 한눈에', keywords:'창업비용 · 운영 조건 · 본사 지원', alt:'매장 사진과 창업 정보 구획이 표시된 가맹모집 홈페이지 예시를 연 노트북'},
+  {title:'문의 후 상담이 이어지지 않습니다.', check:'신청 이후 안내와 응대가 준비되어 있는가', work:'상담 안내와 응대 자료 정리', image:'/images/recruit-examples/consultation.webp', caption:'문의가 다음 상담으로 이어지도록', keywords:'신청 후 안내 · 상담 준비 · 후속 응대', alt:'밝은 상담 공간에서 담당자와 예비 창업자가 체크리스트를 함께 검토하는 장면'},
 ];
 
 export function ServiceGuidePage({href}: {href:string}) {
@@ -56,7 +58,7 @@ export function ServiceGuidePage({href}: {href:string}) {
 
     {mediaSections ? <div id="service-work"><ServiceMediaSections sections={mediaSections}/></div> : <>
     <section className={`${s.section} ${s.soft}`}><div className={s.container}><p className={s.eyebrow}>우리 상황에서 시작합니다</p><DecisionPath p={p}/>
-      {href === '/franchise/recruit' ? <><h2>광고는 하고 있는데,<br/>가맹 문의가 부족한가요?</h2><p className={s.sectionLead}>광고 타깃, 창업 정보, 상담 신청 과정을 함께 살펴보고 필요한 작업을 정리합니다.</p><div className={s.situations}>{recruitSituations.map((item,index) => <article key={item.title}><div className={s.situationCopy}><span className={s.index}>0{index+1}</span><h3>{item.title}</h3><dl><div><dt>확인할 내용</dt><dd>{item.check}</dd></div><div><dt>연결할 작업</dt><dd>{item.work}</dd></div></dl></div><div className={s.miniDocument}><p>{item.label}</p><ul>{item.items.map(text => <li key={text}>{text}</li>)}</ul></div></article>)}</div></> : <><h2>{education ? '교육에서 함께 풀어볼 업무입니다.' : '현재 이런 업무가 필요하신가요?'}</h2><ol className={s.needs}>{p.needs.map((need,index) => <li key={need}><span>0{index+1}</span><p>{need}</p></li>)}</ol></>}
+      {href === '/franchise/recruit' ? <><h2>광고는 하고 있는데,<br/>가맹 문의가 부족한가요?</h2><p className={s.sectionLead}>광고 타깃, 창업 정보, 상담 신청 과정을 함께 살펴보고 필요한 작업을 정리합니다.</p><div className={s.situations}>{recruitSituations.map((item,index) => <article key={item.title}><div className={s.situationCopy}><span className={s.index}>0{index+1}</span><h3>{item.title}</h3><dl><div><dt>확인할 내용</dt><dd>{item.check}</dd></div><div><dt>연결할 작업</dt><dd>{item.work}</dd></div></dl></div><figure className={photo.card}><div className={photo.image}><Image src={item.image} alt={item.alt} width={960} height={600} sizes="(max-width: 760px) calc(100vw - 40px), 464px"/><span>구성 예시</span></div><figcaption><strong>{item.caption}</strong><p>{item.keywords}</p></figcaption></figure></article>)}</div></> : <><h2>{education ? '교육에서 함께 풀어볼 업무입니다.' : '현재 이런 업무가 필요하신가요?'}</h2><ol className={s.needs}>{p.needs.map((need,index) => <li key={need}><span>0{index+1}</span><p>{need}</p></li>)}</ol></>}
       {p.group === 'franchise' && <p className={s.context}>가맹모집은 예비 창업자의 상담, 매장 홍보는 기존 가맹점의 고객 방문이 목적입니다. 대상과 필요한 자료를 나누어 진행합니다.</p>}
       <NextStep p={p} title="지금 필요한 일부터 좁혀보세요." text={story[2]}/>
     </div></section>
