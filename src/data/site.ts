@@ -1,7 +1,7 @@
 import {navigation,companyContact} from './navigation';
 export const site = {
   name: '염원컴퍼니', englishName: 'YUMONE COMPANY', ceo: '염혜단',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yumone-company-db74.vercel.app',
+  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yumone-company.vercel.app',
   description: '20년 프랜차이즈 현장 경험을 바탕으로 마케팅, 본사·SV·가맹점주 교육, AI 검색을 연결하는 성장 파트너 염원컴퍼니입니다.',
   // TODO: 실제 운영 정보 확인 후 입력. 비어 있는 정보는 화면 및 구조화 데이터에서 제외합니다.
   phone: companyContact.phone, email: companyContact.email, address: companyContact.address, businessNumber: '', logo: '', ceoPhoto: '/images/yeom-hyedan.jpg',

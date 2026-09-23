@@ -4,7 +4,7 @@ import {ServiceHeroPhoto} from './service-hero-photo';
 import Link from 'next/link';
 import {navigation, contactHref, companyContact} from '@/data/navigation';
 import {guideFAQs, processByGroup, serviceGuides, type ServiceGuide} from '@/data/service-guide';
-import {BreadSchema, JsonLd} from '@/lib/seo';
+import {BreadcrumbTrail, JsonLd} from '@/lib/seo';
 import {site} from '@/data/site';
 import s from './service-guide.module.css';
 import {serviceMedia} from '@/data/service-media';
@@ -42,10 +42,10 @@ export function ServiceGuidePage({href}: {href:string}) {
   const ai = p.group === 'ai-search';
   return <div className={s.page} data-service-guide={href}>
     <JsonLd data={{'@type':'Service',name:p.title,description:p.description,url:site.url+href+'/',provider:{'@id':site.url+'/#organization'}}}/>
-    <BreadSchema items={hub ? [{label:group.title,href}] : [{label:group.title,href:group.href},{label:p.title,href}]}/>
+    
     <section className={s.hero} aria-labelledby="service-title">
       <div className={s.container}>
-        <nav className={s.breadcrumb} aria-label="현재 위치"><Link href="/">홈</Link><span aria-hidden="true">/</span>{!hub && <><Link href={group.href}>{group.title}</Link><span aria-hidden="true">/</span></>}<span aria-current="page">{p.title}</span></nav>
+        <BreadcrumbTrail className={s.breadcrumb} items={[...(!hub?[{label:group.title,href:group.href}]:[]),{label:p.title,href}]}/>
         <div className={s.heroGrid}>
           <div className={s.heroCopy}><p className={s.serviceName}>{p.title}</p><h1 id="service-title">{p.headline}</h1><p className={s.intro}>{p.description}</p><p className={s.heroBenefit}>→ {story[1]}</p><p className={s.audience}><span>이런 분께</span>{p.audience}</p><div className={s.actions}><Button p={p}/><a className={s.secondary} href="#service-work">업무·결과물 보기 <span aria-hidden="true">↓</span></a></div></div>
           <div className={s.heroVisual}><ServiceHeroPhoto href={href}/></div>

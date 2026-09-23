@@ -6,7 +6,6 @@ import {about} from '@/data/about';
 import {companyPage, founderPage} from '@/data/about-pages';
 import {navigation} from '@/data/navigation';
 import {site} from '@/data/site';
-import {BreadSchema} from '@/lib/seo';
 import {SubpageHero} from './subpage-hero';
 
 import s from './about-pages.module.css';
@@ -66,7 +65,7 @@ export function AboutPage({kind}: {kind: 'company' | 'founder'}) {
   const href = `/about/${kind}`;
   const copy = isCompany ? companyPage : founderPage;
   return <div className={s.page}>
-    <BreadSchema items={[{label: '염원컴퍼니', href: '/about'}, {label: isCompany ? '회사 소개' : '대표 소개', href}]}/>
+    
     <SubpageHero href={href} sectionId={`${kind}-story`} copy={{before: isCompany ? '본사와 가맹점이 함께 성장하는 길,' : '현장을 이해하는 경험,', emphasis: isCompany ? '염원컴퍼니가' : '함께 성장하는', after: isCompany ? ' 연결합니다.' : ' 마케팅으로.', description: copy.description, secondary: isCompany ? '회사 이야기 보기' : '대표 인사말 보기'}}/>
     <AboutNav href={href}/>
     {isCompany ? <><CompanyContent/><ClientsSection withCTA={false}/></> : <FounderContent/>}
