@@ -17,7 +17,7 @@ export function metadata(title:string,description:string,path:string):Metadata {
   const custom=!!config.ogImage;
   const image=new URL(config.ogImage||share.image,site.url).href;
   return {title:name,description:desc,keywords:config.keywords||[page?.title||title,'염원컴퍼니'],robots:config.robots||{index:true,follow:true},alternates:{canonical},
-    openGraph:{title:socialTitle,description:socialDescription,url:canonical,images:[{url:image,alt:custom?name:share.imageAlt,...(!custom?{width:1200,height:630,type:'image/png'}:{})}],siteName:site.name,locale:'ko_KR',type:'website'},
+    openGraph:{title:socialTitle,description:socialDescription,url:canonical,images:[{url:image,alt:custom?name:share.imageAlt,...(!custom?{width:share.imageWidth,height:share.imageHeight,type:'image/png'}:{})}],siteName:site.name,locale:'ko_KR',type:'website'},
     twitter:{card:'summary_large_image',title:socialTitle,description:socialDescription,images:[{url:image,alt:custom?name:share.imageAlt}]}};
 }
 export function JsonLd({data}:{data:Record<string,unknown>}){return <script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org',...data}).replace(/</g,'\\u003c')}}/>}
