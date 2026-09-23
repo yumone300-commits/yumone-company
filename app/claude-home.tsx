@@ -1,3 +1,4 @@
+import {ClientsSection} from '@/components/clients-section';
 import Link from 'next/link';
 /* Ported from the user-supplied Yumone Homepage.dc.html. Native React replaces DC runtime tags. */
 import {HomeInquiry} from './home-inquiry';
@@ -423,12 +424,7 @@ function Education(){return (<section id="education" className={s.c174}>
 </div>
 </section>)}
 
-function Partners(){return (<section id="partners" className={s.c221}>
-<div className={s.c169}>
-<h2 className={s.c222}>{"다양한 전문 파트너와 함께"}{' '}<br/>{"프로젝트의 실행력을 높입니다."}</h2>
-<p className={s.c223}>{"협업사 및 파트너 로고 확인 필요"}</p>
-</div>
-</section>)}
+function Partners(){return <ClientsSection/>}
 
 function FAQ(){return (<section className={s.c174}>
 <div className={s.c18}>
@@ -471,7 +467,7 @@ function Contact(){return (<section id="contact" className={s.c237}>
 <div className={s.inquiry}><HomeInquiry/></div>
 </section>)}
 
-export function ClaudeHome(){return <div id="top" className={s.page}><Hero/><Company/><GrowthSystem/><WorkMethod/><WhyYumone/><Problems/><GrowthJourney/><Services/><GrowthCTA/><Difference/><Founder/><Cases/><ContentHub/><Education/><Partners/><FAQ/><FinalCTA/><Contact/><ReferenceFooter/></div>}
+export function ClaudeHome(){return <div id="top" className={s.page}><Hero/><Company/><GrowthSystem/><WorkMethod/><WhyYumone/><Problems/><GrowthJourney/><Services/><GrowthCTA/><Difference/><Founder/><Cases/><ContentHub/><Education/><FAQ/><Partners/><FinalCTA/><Contact/><ReferenceFooter/></div>}
 
 function ReferenceFooter(){return <footer className={s.referenceFooter}><div className={s.footerGrid}>
 <div><Link href="/" aria-label="염원컴퍼니 홈"><img src="/images/yumone-logo-white.svg" alt="YUMONE COMPANY" width="200" height="69" style={{maxWidth:"100%",height:"auto",objectFit:"contain"}}/></Link><p>프랜차이즈의 성장을<br/>현장에서 설계합니다.</p></div>
