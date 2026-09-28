@@ -129,6 +129,36 @@
       "source": "/cases/:slug/",
       "destination": "/project/marketing/:slug/",
       "permanent": true
+    },
+    {
+      "source": "/about/company",
+      "destination": "/about/#overview",
+      "permanent": true
+    },
+    {
+      "source": "/about/company/",
+      "destination": "/about/#overview",
+      "permanent": true
+    },
+    {
+      "source": "/about/founder",
+      "destination": "/about/#ceo",
+      "permanent": true
+    },
+    {
+      "source": "/about/founder/",
+      "destination": "/about/#ceo",
+      "permanent": true
+    },
+    {
+      "source": "/about/difference",
+      "destination": "/about/#difference",
+      "permanent": true
+    },
+    {
+      "source": "/about/difference/",
+      "destination": "/about/#difference",
+      "permanent": true
     }
   ],
   "headers": [

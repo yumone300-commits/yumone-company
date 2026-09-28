@@ -7,9 +7,9 @@ export const contentRevisions: Record<string, {lastModified:string;commit:string
     "source": "client logo section added (PR #12)"
   },
   "/about": {
-    "lastModified": "2026-09-15",
-    "commit": "545e1a6113af81ef218bcc62b64b014f47353fc9",
-    "source": "src/components/subpage-hero.tsx (visible category/editorial hero)"
+    "lastModified": "2026-09-29",
+    "commit": "codex/company-about",
+    "source": "user-approved company, founder and difference consolidation"
   },
   "/about/company": {
     "lastModified": "2026-09-23",

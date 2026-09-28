@@ -38,7 +38,7 @@ function Company(){return (<section id="brand-intro" className={s.c17}>
 <p className={s.c21}>{"YUMONE COMPANY"}</p>
 <h2 className={s.c22}>{"프랜차이즈 현장을"}{' '}<br/>{"아는 사람이"}{' '}<br/>{"브랜드의 성장 전략을"}{' '}<br/>{"설계합니다."}</h2>
 <p className={s.c23}>{"염원컴퍼니는 광고 채널만 운영하는 대행사가 아닙니다."}{' '}<br/>{"외식 프랜차이즈 본사에서 약 20년간 쌓은 마케팅 실무 경험을 바탕으로 가맹문의, 브랜드 검색 노출, 가맹점 매출, 콘텐츠와 교육을 하나의 성장 구조로 연결합니다."}</p>
-<Link href="/about/difference" className={s.c24}>{"염원컴퍼니의 차별점 보기 "}<span>{"→"}</span></Link>
+<Link href="/about/#difference" className={s.c24}>{"염원컴퍼니의 차별점 보기 "}<span>{"→"}</span></Link>
 </div>
 <div className={s.c25}>
 <div className={s.c26}>
@@ -380,7 +380,7 @@ function Founder(){return (<section id="founder" className={[s.c181,s.founder].j
 <span className={s.c191}>{"AI 기반 검색·콘텐츠 활용"}</span>
 </div>
 <strong className={s.c192}>{"염혜단 "}<small className={s.c193}>{"염원컴퍼니 대표"}</small></strong>
-<Link href="/about/founder" className={s.c194}>{"염혜단 대표 소개 자세히 보기 "}<span>{"→"}</span></Link>
+<Link href="/about/#ceo" className={s.c194}>{"염혜단 대표 소개 자세히 보기 "}<span>{"→"}</span></Link>
 </div>
 </section>)}
 
