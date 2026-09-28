@@ -1,0 +1,10 @@
+export type SupportKind = 'notices' | 'faq' | 'resources';
+export type Attachment = {name:string;url:string;type:'file'|'external'};
+export type SupportEntry = {id:string;slug:string;kind:SupportKind;title:string;summary:string;body:string;category:string;audience:string;status:string;approved:boolean;pinned:boolean;order:number;publishedAt:string;modifiedAt:string;files:Attachment[]};
+export const supportKinds = {notices:'공지사항',faq:'자주 묻는 질문',resources:'무료 자료실'} as const;
+export const supportDescription='염원컴퍼니의 공지사항, 자주 묻는 질문, 프랜차이즈 마케팅·교육 실무 자료와 1:1 문의를 한곳에서 확인하세요.';
+export const entryHref=(e:SupportEntry)=>`/support/${e.kind}/${e.slug}/`;
+export function publishable(e:SupportEntry,now=Date.now()) {return e.status==='발행'&&e.approved&&!!e.title.trim()&&!!e.body.trim()&&Number.isFinite(Date.parse(e.publishedAt))&&Date.parse(e.publishedAt)<=now&&(e.kind!=='resources'||e.files.length>0);}
+export function selectEntries(entries:SupportEntry[],kind:SupportKind,q='',category='전체') {const needle=q.trim().toLocaleLowerCase('ko');return entries.filter(e=>e.kind===kind&&publishable(e)&&(category==='전체'||e.category===category)&&(!needle||`${e.title} ${e.body} ${e.summary}`.toLocaleLowerCase('ko').includes(needle))).sort((a,b)=>kind==='faq'?a.order-b.order||a.id.localeCompare(b.id):Number(b.pinned)-Number(a.pinned)||b.publishedAt.localeCompare(a.publishedAt)||a.id.localeCompare(b.id));}
+export function paginate<T>(rows:T[],page:unknown,size=10){const count=Math.max(1,Math.ceil(rows.length/size)),requested=Number(page),current=Math.min(count,Number.isSafeInteger(requested)&&requested>0?requested:1);return {rows:rows.slice((current-1)*size,current*size),page:current,pages:count,total:rows.length};}
+export function safeBack(kind:SupportKind,query:Record<string,string|undefined>){const p=new URLSearchParams();for(const k of ['q','category','page'])if(query[k])p.set(k,query[k]!.slice(0,200));return `/support/${kind}/`+(p.size?'?'+p:'');}

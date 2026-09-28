@@ -131,7 +131,6 @@
       "permanent": true
     }
   ],
-
   "headers": [
     {
       "source": "/insight/:path*",
@@ -165,6 +164,64 @@
     },
     {
       "source": "/insight/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "page"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/support/admin/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "private, no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/support/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "q"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/support/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "category"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/support/:path*",
       "has": [
         {
           "type": "query",

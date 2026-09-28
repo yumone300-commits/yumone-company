@@ -1,0 +1,10 @@
+import {SupportLink as Link} from '@/components/support/link';
+import {metadata as makeMetadata} from '@/lib/seo';
+import {supportDescription,selectEntries} from '@/lib/support/core';
+import {publicSupport} from '@/lib/support/public';
+import {SupportHero,Consultation,Notices,ResourceCards,Empty} from '@/components/support/shared';
+import s from '@/components/support/support.module.css';
+export const dynamic='force-dynamic';
+export const metadata=makeMetadata('고객지원',supportDescription,'/support');
+const shortcuts=[['공지사항','염원컴퍼니의 서비스 소식과\n교육·운영 안내를 확인하세요.','공지사항 확인하기 →','notices'],['자주 묻는 질문','마케팅과 교육의 진행 방식, 준비 사항,\n비용 관련 궁금증을 확인하세요.','궁금한 내용 찾아보기 →','faq'],['무료 자료실','본사 마케팅과 가맹점 운영에 활용할\n실무 자료를 확인하세요.','실무 자료 살펴보기 →','resources'],['1:1 문의','가맹모집·가맹점 매출·AI 마케팅·교육 중\n현재 고민을 남겨주세요.','마케팅·교육 문의하기 →','inquiry']];
+export default async function Support(){const {entries,state}=await publicSupport(),notices=selectEntries(entries,'notices').slice(0,3),resources=selectEntries(entries,'resources').slice(0,3);return <><SupportHero home title="고객지원" description={'공지사항과 자주 묻는 질문, 프랜차이즈 실무 자료를 확인하세요.\n우리 브랜드의 고민은 1:1 문의로 남겨주세요.'}/><div className={s.container}><section className={s.section} aria-label="고객지원 바로가기"><div className={s.shortcuts}>{shortcuts.map(([title,description,label,key],i)=><Link key={key} href={`/support/${key}/`} className={`${s.card} ${i===3?s.red:''}`}><span className={s.number}>0{i+1}</span><h2>{title}</h2><p>{description}</p><b>{label}</b></Link>)}</div></section><section className={s.section}><div className={s.sectionHeading}><h2>최근 공지사항</h2><Link href="/support/notices/">전체 공지 보기 →</Link></div>{notices.length?<Notices entries={notices}/>:<Empty state={state} kind="notices"/>}</section><section className={s.section}><div className={s.sectionHeading}><h2>바로 활용하는 실무 자료</h2><Link href="/support/resources/">자료실 전체 보기 →</Link></div><p className={s.lead}>프랜차이즈 현장의 실행을 돕는 자료를 모았습니다.</p>{resources.length?<ResourceCards entries={resources}/>:<Empty state={state} kind="resources"/>}</section><Consultation/></div></>}

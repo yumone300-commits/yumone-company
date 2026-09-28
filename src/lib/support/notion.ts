@@ -1,0 +1,18 @@
+import 'server-only';
+import {readFile} from 'node:fs/promises';
+import type {SupportEntry,SupportKind,Attachment} from './core';
+
+type Property={title?:{plain_text?:string;text?:{content:string}}[];rich_text?:{plain_text?:string;text?:{content:string}}[];select?:{name:string};checkbox?:boolean;number?:number;date?:{start:string};files?:{name:string;type:'file'|'external';file?:{url:string};external?:{url:string}}[]};
+type NotionPage={id:string;archived?:boolean;in_trash?:boolean;last_edited_time:string;parent?:{data_source_id?:string};properties:Record<string,Property>};
+export type SupportResult={state:'ready'|'unconfigured'|'error';entries:SupportEntry[]};
+const kinds:Record<string,SupportKind>={'공지사항':'notices','FAQ':'faq','자료실':'resources'};
+export const supportDatabaseId=process.env.NOTION_SUPPORT_DATA_SOURCE_ID||'77cacbeb-74fe-4dee-a4e5-206c2f7c9b5e';
+export const supportAdminUrl='https://www.notion.so/9782ab3c4915433284d642206df43857';
+const plain=(p?:Property)=>(p?.title||p?.rich_text||[]).map(t=>t.plain_text??t.text?.content??'').join('');
+function parse(p:NotionPage):SupportEntry|null {const a=p.properties,kind=kinds[a['유형']?.select?.name||''];if(!kind||p.archived||p.in_trash)return null;return {id:p.id,slug:p.id.replaceAll('-',''),kind,title:plain(a['제목']),summary:plain(a['요약']),body:plain(a['본문']),category:a['분류']?.select?.name||'',audience:plain(a['활용대상']),status:a['공개상태']?.select?.name||'초안',approved:a['공개검수']?.checkbox===true,pinned:a['상단고정']?.checkbox===true,order:a['표시순서']?.number||0,publishedAt:a['발행일']?.date?.start||'',modifiedAt:p.last_edited_time,files:(a['첨부파일']?.files||[]).map(f=>({name:f.name,type:f.type,url:f.file?.url||f.external?.url||''} as Attachment)).filter(f=>!!f.url)};}
+async function request(endpoint:string,body?:unknown){const r=await fetch('https://api.notion.com/v1/'+endpoint,{method:body?'POST':'GET',headers:{Authorization:`Bearer ${process.env.NOTION_TOKEN}`,'Notion-Version':'2025-09-03','Content-Type':'application/json'},...(body?{body:JSON.stringify(body)}:{}),cache:'no-store',signal:AbortSignal.timeout(12000)});if(!r.ok)throw Error('Support content unavailable');return r.json();}
+// Test fixtures are opt-in, local-only and cannot run in any Vercel deployment.
+export function fixtureEnabled(){return !process.env.VERCEL&&process.env.SUPPORT_LOCAL_TEST==='1'&&process.env.SUPPORT_APP_ORIGIN==='http://127.0.0.1:4180';}
+async function fixtures():Promise<SupportEntry[]>{if(!fixtureEnabled()||!process.env.SUPPORT_TEST_FIXTURE_FILE)return [];return JSON.parse(await readFile(process.env.SUPPORT_TEST_FIXTURE_FILE,'utf8'));}
+export async function getSupportEntries():Promise<SupportResult>{if(fixtureEnabled())return {state:'ready',entries:await fixtures()};if(!process.env.NOTION_TOKEN)return {state:'unconfigured',entries:[]};try{let cursor:string|undefined;const entries:SupportEntry[]=[];do{const result=await request(`data_sources/${supportDatabaseId}/query`,{page_size:100,...(cursor?{start_cursor:cursor}:{})});for(const p of result.results as NotionPage[]){const e=parse(p);if(e)entries.push(e);}cursor=result.has_more?result.next_cursor:undefined;if(entries.length>5000)throw Error('Support limit');}while(cursor);return {state:'ready',entries};}catch{return {state:'error',entries:[]};}}
+export async function getSupportEntry(slug:string):Promise<SupportEntry|null>{if(!/^[a-f0-9]{32}$/.test(slug))return null;if(fixtureEnabled())return (await fixtures()).find(e=>e.slug===slug)||null;if(!process.env.NOTION_TOKEN)return null;try{const p:NotionPage=await request('pages/'+slug);if(p.parent?.data_source_id?.replaceAll('-','')!==supportDatabaseId.replaceAll('-',''))return null;return parse(p);}catch{return null;}}

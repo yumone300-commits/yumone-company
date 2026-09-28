@@ -8,3 +8,6 @@
 
 /* The blog is a direct mobile menu link; other menu styles stay unchanged. */
 .mobile .blogDirect{display:flex;align-items:center;min-height:56px;font-weight:700}
+
+/* Preserve breathing room after the former project dropdown. */
+.supportDirect{margin-right:14px}

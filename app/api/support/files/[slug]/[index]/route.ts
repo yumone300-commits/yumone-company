@@ -1,0 +1,5 @@
+import {getSupportEntry} from '@/lib/support/notion';
+import {publishable} from '@/lib/support/core';
+import {loadAttachment} from '@/lib/support/files';
+export const dynamic='force-dynamic';
+export async function GET(_request:Request,{params}:{params:Promise<{slug:string;index:string}>}){const {slug,index}=await params;const e=await getSupportEntry(slug);if(!e||!publishable(e)||!/^\d+$/.test(index)||!e.files[Number(index)])return new Response('파일을 찾을 수 없습니다.',{status:404,headers:{'Cache-Control':'no-store','X-Robots-Tag':'noindex'}});try{const f=await loadAttachment(e.files[Number(index)]);return new Response(new Uint8Array(f.bytes),{headers:{'Content-Type':f.mime,'Content-Length':String(f.size),'Content-Disposition':`attachment; filename="document.${f.name.split('.').pop()?.toLowerCase()}"; filename*=UTF-8''${encodeURIComponent(f.name)}`,'Cache-Control':'private, no-store, max-age=0','X-Content-Type-Options':'nosniff','X-Robots-Tag':'noindex, nofollow','Content-Security-Policy':"sandbox; default-src 'none'"}});}catch{return new Response('파일을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.',{status:503,headers:{'Cache-Control':'no-store','X-Robots-Tag':'noindex'}});}}
