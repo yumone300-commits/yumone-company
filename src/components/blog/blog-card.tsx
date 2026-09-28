@@ -1,0 +1,5 @@
+import Link from 'next/link';
+import Image from 'next/image';
+import type {BlogCard} from '@/lib/blog-types';
+import s from './blog.module.css';
+export function BlogCardView({post,heading='h2'}:{post:BlogCard;heading?:'h2'|'h3'}){const image=post.images.find(i=>i.role==='thumbnail'&&i.status==='ready'&&i.rights==='approved');const Heading=heading;return <Link className={s.card} href={`/insight/column/${post.slug}/`}><div className={s.thumbnail}>{image?<><Image src={image.src} alt={image.alt} width={1200} height={675} sizes="(max-width:600px) 90vw,(max-width:1100px) 45vw,380px" loading="lazy"/>{image.kind==='generated'&&<span className={s.generated}>AI 생성 이미지</span>}</>:<div className={s.fallback} role="img" aria-label={`${post.category} 브랜드 대체 이미지`}><span>YUMONE COMPANY</span><strong>{post.category}</strong></div>}</div><div className={s.category}>{post.category}</div><Heading>{post.title}</Heading><p>{post.summary}</p><time dateTime={post.publishedAt}>{post.publishedAt.slice(0,10).replaceAll('-','. ')}</time></Link>}

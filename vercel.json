@@ -130,5 +130,53 @@
       "destination": "/project/marketing/:slug/",
       "permanent": true
     }
+  ],
+
+  "headers": [
+    {
+      "source": "/insight/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "q"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/insight/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "category"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    },
+    {
+      "source": "/insight/:path*",
+      "has": [
+        {
+          "type": "query",
+          "key": "page"
+        }
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, follow"
+        }
+      ]
+    }
   ]
 }

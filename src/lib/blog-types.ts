@@ -1,0 +1,6 @@
+export const blogCategories=['가맹모집','가맹점 매출','AI 마케팅','SV·교육'] as const;
+export type BlogCategory=typeof blogCategories[number];
+export type BlogImage={id:string;role:'thumbnail'|'body';headingId?:string;prompt?:string;src:string;alt:string;caption:string;kind:'original'|'generated'|'brand';status:'ready'|'pending';rights:'approved'|'review';width:number;height:number};
+export type BlogBlock={type:'paragraph'|'heading'|'quote'|'list'|'table'|'image'|'link';text?:string;level?:2|3;id?:string;items?:string[];ordered?:boolean;rows?:string[][];imageId?:string;href?:string};
+export type BlogPost={id:string;slug:string;title:string;summary:string;category:BlogCategory;tags:string[];author:string;status:'draft'|'review'|'published'|'withdrawn';publishedAt:string;firstPublishedAt?:string;modifiedAt?:string;importedAt?:string;sourceUrl?:string;sourceId?:string;sourcePublishedAt?:string;notionPageId?:string;sourceHash?:string;contentHash?:string;collectionStatus:'complete'|'partial'|'direct'|'legacy';contentVerified:boolean;categoryManual?:boolean;blocks:BlogBlock[];images:BlogImage[];ctaCategory?:BlogCategory};
+export type BlogCard=Pick<BlogPost,'id'|'slug'|'title'|'summary'|'category'|'tags'|'author'|'publishedAt'|'images'>;

@@ -1,0 +1,4 @@
+import {publicPosts,postHref} from '@/lib/blog';import {site} from '@/data/site';
+export const dynamic='force-static';
+const escape=(s:string)=>s.replace(/[<>&"']/g,c=>({'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;',"'":'&apos;'}[c]!));
+export function GET(){const posts=publicPosts();return new Response(`<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>염원컴퍼니 블로그</title><link>${site.url}/insight/</link><description>프랜차이즈 마케팅과 교육</description><language>ko</language>${posts.map(p=>`<item><guid isPermaLink="true">${site.url+postHref(p)}</guid><title>${escape(p.title)}</title><link>${site.url+postHref(p)}</link><description>${escape(p.summary)}</description><pubDate>${new Date(p.publishedAt).toUTCString()}</pubDate><category>${escape(p.category)}</category></item>`).join('')}</channel></rss>`,{headers:{'Content-Type':'application/rss+xml; charset=utf-8'}})}
