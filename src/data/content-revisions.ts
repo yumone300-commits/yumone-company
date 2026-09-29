@@ -106,11 +106,7 @@ export const contentRevisions: Record<string, {lastModified:string;commit:string
     "commit": "cfa7202c86632c85efe634024562738dbf514f52",
     "source": "src/data/service-hero-photos.ts (service photographs)"
   },
-  "/education": {
-    "lastModified": "2026-09-22",
-    "commit": "cfa7202c86632c85efe634024562738dbf514f52",
-    "source": "src/data/service-hero-photos.ts (service photographs)"
-  },
+  "/education": {"lastModified":"2026-09-29","commit":"codex/education-service","source":"user-provided SV academy landing integration"},
   "/education/hq": {
     "lastModified": "2026-09-22",
     "commit": "cfa7202c86632c85efe634024562738dbf514f52",

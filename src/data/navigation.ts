@@ -253,7 +253,7 @@ export const navigation:NavigationGroup[]=[
   },
   {
     "key": "education",
-    "title": "마케팅교육",
+    "title": "교육 서비스",
     "href": "/education",
     "headline": "알고 끝나는 교육에서, 현장에서 실행하는 교육으로.",
     "description": "본사 직원·슈퍼바이저·점주의 역할에 맞춰 마케팅과 AI 활용을 실무 과제로 연결합니다.",

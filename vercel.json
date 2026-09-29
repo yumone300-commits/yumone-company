@@ -51,46 +51,6 @@
       "permanent": true
     },
     {
-      "source": "/education/headquarters",
-      "destination": "/education/hq",
-      "permanent": true
-    },
-    {
-      "source": "/education/headquarters/",
-      "destination": "/education/hq/",
-      "permanent": true
-    },
-    {
-      "source": "/education/sv",
-      "destination": "/education/supervisor",
-      "permanent": true
-    },
-    {
-      "source": "/education/sv/",
-      "destination": "/education/supervisor/",
-      "permanent": true
-    },
-    {
-      "source": "/education/franchisee",
-      "destination": "/education/owner",
-      "permanent": true
-    },
-    {
-      "source": "/education/franchisee/",
-      "destination": "/education/owner/",
-      "permanent": true
-    },
-    {
-      "source": "/education/ai-marketing",
-      "destination": "/education/ai",
-      "permanent": true
-    },
-    {
-      "source": "/education/ai-marketing/",
-      "destination": "/education/ai/",
-      "permanent": true
-    },
-    {
       "source": "/cases",
       "destination": "/project",
       "permanent": true
@@ -158,6 +118,86 @@
     {
       "source": "/about/difference/",
       "destination": "/about/#difference",
+      "permanent": true
+    },
+    {
+      "source": "/education/hq",
+      "destination": "/education/#courses",
+      "permanent": true
+    },
+    {
+      "source": "/education/hq/",
+      "destination": "/education/#courses",
+      "permanent": true
+    },
+    {
+      "source": "/education/supervisor",
+      "destination": "/education/#course-sv",
+      "permanent": true
+    },
+    {
+      "source": "/education/supervisor/",
+      "destination": "/education/#course-sv",
+      "permanent": true
+    },
+    {
+      "source": "/education/owner",
+      "destination": "/education/#course-owner",
+      "permanent": true
+    },
+    {
+      "source": "/education/owner/",
+      "destination": "/education/#course-owner",
+      "permanent": true
+    },
+    {
+      "source": "/education/ai",
+      "destination": "/education/#course-ai",
+      "permanent": true
+    },
+    {
+      "source": "/education/ai/",
+      "destination": "/education/#course-ai",
+      "permanent": true
+    },
+    {
+      "source": "/education/headquarters",
+      "destination": "/education/#courses",
+      "permanent": true
+    },
+    {
+      "source": "/education/headquarters/",
+      "destination": "/education/#courses",
+      "permanent": true
+    },
+    {
+      "source": "/education/sv",
+      "destination": "/education/#course-sv",
+      "permanent": true
+    },
+    {
+      "source": "/education/sv/",
+      "destination": "/education/#course-sv",
+      "permanent": true
+    },
+    {
+      "source": "/education/franchisee",
+      "destination": "/education/#course-owner",
+      "permanent": true
+    },
+    {
+      "source": "/education/franchisee/",
+      "destination": "/education/#course-owner",
+      "permanent": true
+    },
+    {
+      "source": "/education/ai-marketing",
+      "destination": "/education/#course-ai",
+      "permanent": true
+    },
+    {
+      "source": "/education/ai-marketing/",
+      "destination": "/education/#course-ai",
       "permanent": true
     }
   ],

@@ -1,0 +1,20 @@
+/* Only host integration adjustments; original landing styles are scoped separately. */
+#education-landing{isolation:isolate;padding-bottom:0;color-scheme:light;--bg:#F3F2F1;--surface:#fff;--text:#17181C;--muted:#62636B;--line:#E2DFDD;--red-tint:#FDECEC}
+#education-landing [hidden]{display:none!important}
+#education-landing section[id],#education-landing .track[id],#education-landing #coach{scroll-margin-top:110px}
+#education-landing img{max-width:100%}
+#education-landing .wrap{width:100%}
+#education-landing .hero-inner{min-height:640px}
+#education-landing .qbar{z-index:90}
+#education-landing .qbar.is-focus-hidden{display:none}
+#education-landing .qbar-in{max-height:70dvh;overflow-y:auto;overscroll-behavior:contain}
+#education-landing .qbar form{min-width:0}
+#education-landing button[type=submit]:disabled{opacity:.6;cursor:wait}
+#education-landing .f input,#education-landing .f textarea{scroll-margin-block:110px}
+#education-landing .direct a{font-weight:700}
+#education-landing .landing-brand{font-size:14px;color:#E5E7EB;margin-bottom:14px}
+#education-landing :is(form,input,textarea,select,button){font-family:var(--body)}
+#education-landing .receiver-notice{font-size:14px;padding:14px;margin-bottom:16px;border:1px solid #555;color:#F4F2F0;border-radius:8px}
+@media(max-width:959px){#education-landing .hero-inner{min-height:0}}
+@media(max-width:860px){#education-landing .qbar:not(.is-expanded) form{display:none}#education-landing .qbar:not(.is-expanded) .qbar-tab svg{transform:rotate(180deg)}#education-landing .qbar-tab{min-height:36px}}
+@media(max-width:600px){#education-landing .chain{gap:8px}#education-landing .node{width:60px;height:60px}#education-landing .link{min-width:8px}#education-landing .books{grid-template-columns:80px 1fr;padding:16px;gap:16px}#education-landing .books img{width:80px}#education-landing .chat .b{max-width:100%}#education-landing .chat .msg,#education-landing .chat .msg>div{min-width:0}#education-landing .t{white-space:normal}#education-landing section[id],#education-landing .track[id]{scroll-margin-top:94px}}

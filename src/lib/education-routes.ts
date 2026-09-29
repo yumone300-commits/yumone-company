@@ -1,0 +1,2 @@
+export const educationRedirects:Record<string,string>={'/education/hq':'/education/#courses','/education/headquarters':'/education/#courses','/education/supervisor':'/education/#course-sv','/education/sv':'/education/#course-sv','/education/owner':'/education/#course-owner','/education/franchisee':'/education/#course-owner','/education/ai':'/education/#course-ai','/education/ai-marketing':'/education/#course-ai'};
+export function educationHref(href:string){return educationRedirects[href.replace(/\/$/,'')]||href;}
