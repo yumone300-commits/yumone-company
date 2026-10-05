@@ -9,6 +9,6 @@ export const share = {
 
 // Home-only copy: preserve metadata inherited by other routes.
 export const homeShare = {
-  title: '염원컴퍼니 | AEO·GEO 마케팅 대행사 · 프랜차이즈 교육',
-  description: '염원컴퍼니는 AEO·GEO 기반 AI 검색 마케팅 대행사이자 프랜차이즈 교육 전문 회사입니다. SEO·콘텐츠 마케팅과 슈퍼바이저(SV)·가맹점주·본사 직원 교육을 제공합니다. 브랜드에 맞는 마케팅·교육을 상담하세요.',
+  title: '염원컴퍼니 | AEO·GEO 전문 대행사 · 프랜차이즈 교육',
+  description: '염원컴퍼니는 AEO·GEO 기반 AI 검색 마케팅 전문 대행사이자 프랜차이즈 교육 전문 기업입니다. SEO·콘텐츠 마케팅과 슈퍼바이저·가맹점주·본사 직원 교육을 제공합니다.',
 };
