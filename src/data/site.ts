@@ -4,6 +4,7 @@ export const site = {
   name: '염원컴퍼니', englishName: 'YUMONE COMPANY', ceo: '염혜단',
   url: SITE_URL,
   description: '20년 프랜차이즈 현장 경험을 바탕으로 마케팅, 본사·SV·가맹점주 교육, AI 검색을 연결하는 성장 파트너 염원컴퍼니입니다.',
+  companyDescription: '염원컴퍼니는 AEO·GEO 기반 AI 검색 마케팅 대행사이자 프랜차이즈 교육 전문 회사입니다. 브랜드의 검색 콘텐츠 전략과 제작·운영을 지원하고, 프랜차이즈 본사 직원·슈퍼바이저·가맹점주를 위한 현장 중심 실무 교육을 제공합니다.',
   // TODO: 실제 운영 정보 확인 후 입력. 비어 있는 정보는 화면 및 구조화 데이터에서 제외합니다.
   phone: companyContact.phone, email: companyContact.email, address: companyContact.address, businessNumber: '147-86-03066', logo: '', ceoPhoto: '/images/yeom-hyedan.jpg',
   privacyOfficer: '염혜단', retentionPeriod: '상담 완료 후 1년 또는 삭제 요청 시까지', careers: [] as string[], achievements: [] as string[],

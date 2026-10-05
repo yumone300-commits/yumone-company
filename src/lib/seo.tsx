@@ -4,7 +4,7 @@ import {Fragment} from 'react';
 import {site} from '@/data/site';
 import {pageSEO} from '@/data/page-seo';
 import {allNavigationPages} from '@/data/navigation';
-import {share} from '@/data/share';
+import {share,homeShare} from '@/data/share';
 
 
 export function metadata(title:string,description:string,path:string):Metadata {
@@ -14,8 +14,8 @@ export function metadata(title:string,description:string,path:string):Metadata {
   const name=config.title||page?.title||title;
   const desc=config.description||page?.description||description;
   const canonical=config.canonical||new URL(href==='/'?'/':href+'/',site.url).href;
-  const socialTitle=href==='/'?share.title:config.ogTitle||`${name} | ${site.name}`;
-  const socialDescription=href==='/'?share.description:config.ogDescription||desc;
+  const socialTitle=href==='/'?homeShare.title:config.ogTitle||`${name} | ${site.name}`;
+  const socialDescription=href==='/'?homeShare.description:config.ogDescription||desc;
   const custom=!!config.ogImage;
   const image=new URL(config.ogImage||share.image,site.url).href;
   return {title:name,description:desc,robots:config.robots||{index:true,follow:true},alternates:{canonical},
