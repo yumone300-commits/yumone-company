@@ -1,6 +1,7 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import './typography.css';
+import './design-tokens.css';
 import {ContactPaths} from '@/components/contact-paths';
 import {Header} from '@/components/header';
 import {Footer} from '@/components/footer';

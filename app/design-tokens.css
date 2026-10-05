@@ -1,0 +1,4 @@
+:root{--charcoal:#121212;--ink:#1a1a1a;--muted:#5f6368;--red:#ed1c24;--warm:#f7f6f3;--gray:#f7f6f3;--border:#e7e5e1}
+body{word-break:keep-all} .button{min-height:56px;border-radius:8px;font-size:18px} .container{max-width:1200px} .section{padding-block:120px} .section h2{font-size:40px} .section p{line-height:1.7}
+@media(max-width:1100px){.section{padding-block:88px}.section h2{font-size:32px}}
+@media(max-width:760px){.section{padding-block:64px}.section h2{font-size:26px}.container{width:calc(100% - 40px)}.button{font-size:16px}body{padding-bottom:72px}}

@@ -11,3 +11,4 @@
 
 /* Preserve breathing room after the former project dropdown. */
 .supportDirect{margin-right:14px}
+.inner,.topRow{height:72px}.officialLogo{height:72px;width:164px}.inner{max-width:1200px}.shell{transition:box-shadow .2s}.compact{box-shadow:0 3px 16px #0000000d}.compact .inner,.compact .topRow,.compact .officialLogo{height:60px}.topRow>a{font-size:16px}.inner,.topRow,.officialLogo{transition:height .2s}.compact .mobile{max-height:calc(100dvh - 60px)}
