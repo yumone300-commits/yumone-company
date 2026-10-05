@@ -1,24 +1,27 @@
 import {createHash} from 'node:crypto';
 export const runtime='nodejs';
-export const maxDuration=30;
+export const maxDuration=60;
 const success='상담 신청이 접수되었습니다. 1영업일 안에 연락드리겠습니다.';
 const failure='전송에 실패했습니다. 02-6949-6859로 연락 주세요.';
 // Per-instance guard. The receiver also enforces a shared limit.
 const attempts=new Map<string,{count:number;until:number}>();
-const reply=(status:number,message:string)=>Response.json({ok:status===200,message},{status,headers:{'Cache-Control':'no-store'}});
+const reply=(status:number,message:string,details:Record<string,unknown>={})=>Response.json({ok:status===200,message,...details},{status,headers:{'Cache-Control':'no-store'}});
+// Log only fixed diagnostic codes, never form fields, endpoint URLs or upstream bodies.
+const deliveryFailure=(code:string)=>{console.error('[contact]',code);return reply(502,'접수 확인 응답을 받지 못했습니다. 입력 내용을 유지한 채 다시 시도해 주세요. 같은 접수번호로 중복 저장을 방지합니다.',{code});};
 export async function POST(request:Request){
  const url=new URL(request.url);const publicOrigin=`${url.protocol}//${request.headers.get('host')||url.host}`;
  if(request.headers.get('origin')!==publicOrigin)return reply(403,'허용되지 않은 요청입니다.');
  if(!request.headers.get('content-type')?.includes('application/json'))return reply(415,'신청 양식을 확인해 주세요.');
  let data:Record<string,unknown>;
  try{const raw=await request.text();if(raw.length>48000)return reply(413,'입력 내용이 너무 깁니다.');data=JSON.parse(raw);if(!data||typeof data!=='object'||Array.isArray(data))throw new Error();}catch{return reply(400,'신청 양식을 확인해 주세요.');}
- if(data['bot-field'])return reply(200,success);
+ if(data['bot-field'])return reply(400,'신청 양식을 확인해 주세요.');
  if(Object.values(data).some(v=>typeof v!=='string'||v.length>3000))return reply(400,'각 항목은 3,000자 이내로 입력해 주세요.');
  const value=(key:string)=>String(data[key]||'').trim();
  if(!value('company')||!value('name')||!value('phone')||value('agree')!=='동의')return reply(400,'회사명, 담당자명, 연락처와 개인정보 동의를 확인해 주세요.');
  if(!/^[+\d()\s-]{8,20}$/.test(value('phone'))||value('phone').replace(/\D/g,'').length<8)return reply(400,'연락처 형식을 확인해 주세요.');
  if(value('email')&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value('email')))return reply(400,'이메일 형식을 확인해 주세요.');
- const endpoint=process.env.FORM_ENDPOINT;if(!endpoint)return reply(503,failure);
+ if(!/^[a-zA-Z0-9-]{16,80}$/.test(value('request_id')))return reply(400,'신청 식별자를 확인해 주세요.');
+ const endpoint=process.env.FORM_ENDPOINT?.trim();if(!endpoint){console.error('[contact] ENDPOINT_MISSING');return reply(503,failure,{code:'ENDPOINT_MISSING'});}
  const now=Date.now();for(const [key,item] of attempts)if(item.until<=now)attempts.delete(key);
  const ip=request.headers.get('x-vercel-forwarded-for')||request.headers.get('x-forwarded-for')||'local';
  const key=createHash('sha256').update(ip.split(',')[0].trim()).digest('hex');
@@ -26,5 +29,13 @@ export async function POST(request:Request){
  if(item.count>=3)return reply(429,'잠시 후 다시 시도해 주세요. 1분에 최대 3회 신청할 수 있습니다.');
  item.count++;attempts.set(key,item);
  const body=new URLSearchParams();for(const field of ['form-name','page','company','name','phone','email','website','service','sv','plan','message','agree','request_id'])body.set(field,value(field));body.set('rate_key',key);
- try{const upstream=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body,redirect:'follow',cache:'no-store',signal:AbortSignal.timeout(20000)});const result=await upstream.json();if(result?.code==='RATE_LIMIT')return reply(429,'잠시 후 다시 시도해 주세요.');if(!upstream.ok||result?.ok!==true)return reply(502,failure);return reply(200,success);}catch{return reply(502,failure);}
+ try{
+  const upstream=await fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body,redirect:'follow',cache:'no-store',signal:AbortSignal.timeout(50000)});
+  if(!upstream.ok)return deliveryFailure('RECEIVER_HTTP_ERROR');
+  let result;try{result=await upstream.json();}catch{return deliveryFailure('RECEIVER_NOT_JSON');}
+  if(result?.code==='RATE_LIMIT')return reply(429,'잠시 후 다시 시도해 주세요.');
+  if(result?.ok!==true)return deliveryFailure(result?.code==='STORAGE_ERROR'?'STORAGE_ERROR':'RECEIVER_REJECTED');
+  if(result.requestId!==value('request_id')||result.receiptId!==value('request_id'))return deliveryFailure('RECEIPT_MISMATCH');
+  return reply(200,success,{requestId:result.requestId,receiptId:result.receiptId,notification:result.notification==='sent'?'sent':result.notification==='failed'?'failed':'unknown'});
+ }catch(error){return deliveryFailure(error instanceof Error&&error.name==='TimeoutError'?'RECEIVER_TIMEOUT':'RECEIVER_UNREACHABLE');}
 }
