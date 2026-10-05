@@ -4,3 +4,5 @@
 @media(max-width:767px){.page [class*="heroColumns"],.page .example,.fit,.outputs{grid-template-columns:1fr}.page [class*="hero"] h1{font-size:34px}.page p{font-size:16px}.page h3{font-size:20px}.outputs{gap:8px}.page .example{gap:24px}.page [class*="section"] h2{font-size:30px}.page [class*="heroActions"]{gap:10px}.page [class*="hero"] [class*="lead"]{margin-bottom:24px}.page [class*="hero"] h1{margin-bottom:20px}}
 
 .page .curriculum{grid-template-columns:repeat(2,minmax(0,1fr))}.page .curriculum>div{border-left:3px solid #ed1c24;padding:16px 24px;background:#fff}.page .production{grid-template-columns:repeat(2,minmax(0,1fr))}.siteFlow{background:#f5f4f1;padding:36px;border:1px solid #ddd;border-radius:12px}.siteFlow small,.siteFlow b{color:#ed1c24}.siteFlow>div{border-top:1px solid #ccc;margin-top:24px;padding-top:20px}.siteFlow h3{font-size:22px}@media(max-width:767px){.page .curriculum,.page .production{grid-template-columns:1fr}.siteFlow{padding:24px}}
+
+.page .exampleText{display:block}

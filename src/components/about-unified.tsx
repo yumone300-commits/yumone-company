@@ -41,7 +41,6 @@ export function AboutUnified() {
     </Section>
     <Section id="process" label="HOW WE WORK" title={'현재 상황을 확인하고,\n필요한 일부터 실행합니다.'} muted>
       <ol className={s.steps}>{process.map(([title,text],i)=><li key={title}><span className={s.number}>0{i+1}</span><h3>{title}</h3><p>{text}</p></li>)}</ol>
-      <figure className={s.consulting}><Image src="/images/pdf-reference/consulting-session.jpg" alt="자료를 함께 검토하며 진행하는 컨설팅 현장" width={306} height={194} sizes="(max-width:600px) 90vw, 306px"/><figcaption>브랜드의 과제를 함께 살펴보는 상담 현장</figcaption></figure>
     </Section>
     <Section label="SEARCH & AI" title={'검색에서도, AI 답변에서도\n브랜드 정보가 정확하게 전달되도록.'}>
       <div className={s.split}><div><p className={s.prose}>염원컴퍼니는 검색과 AI 답변 환경을 고려해 브랜드의 공식 정보와 콘텐츠를 정리합니다. 회사 소개·서비스·FAQ·공식 채널의 설명이 서로 일치하는지, 고객의 질문에 필요한 정보가 담겨 있는지 함께 점검합니다.</p><Link className={s.textLink} href="/ai-search/">AI 검색 마케팅 서비스 살펴보기 →</Link></div><dl className={s.flow}>{search.map(([title,text])=><div key={title}><dt>{title}</dt><dd>{text}</dd></div>)}</dl></div>

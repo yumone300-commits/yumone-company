@@ -22,7 +22,7 @@ function AboutNav({href}: {href: string}) {
 function CompanyContent() {
   return <>
     <Section id="company-story" label="OUR STORY · 회사 소개" title={'브랜드의 가능성을\n현장의 변화로 잇습니다.'}>
-      <div className={s.storyGrid}><div className={s.prose}>{companyPage.introduction.map(text => <p key={text}>{text}</p>)}</div><figure className={s.storyPhoto}><Image src="/images/pdf-reference/consulting-session.jpg" alt="자료를 함께 검토하며 진행하는 컨설팅 현장" width={306} height={194} sizes="(max-width: 760px) 90vw, 480px"/><figcaption>브랜드의 과제를 함께 살펴보는 상담 현장</figcaption></figure></div>
+      <div className={s.prose}>{companyPage.introduction.map(text => <p key={text}>{text}</p>)}</div>
     </Section>
     <section className={s.statement}><div className={s.container}><p className={s.eyebrow}>OUR BELIEF · 우리가 믿는 성장</p><h2>본사의 성장이<br/><em>가맹점의 성장으로 이어지도록.</em></h2><p>마케팅이 만든 약속을 현장의 경험으로 완성합니다.<br/>염원컴퍼니는 전략과 실행 사이를 연결하는 파트너입니다.</p></div></section>
     <Section label="OUR VALUES · 핵심 가치" title="함께 일할 때 지키는 네 가지 기준">

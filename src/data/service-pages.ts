@@ -1,4 +1,4 @@
-export type ServiceProfile={href:string;group:string;title:string;eyebrow:string;before:string;emphasis:string;after:string;audience:string;description:string;strategy:string;outputs:string[];cta:string;faq:{q:string;a:string}[];problems:string[];scope:string[];image:string;alt:string};
+export type ServiceProfile={href:string;group:string;title:string;eyebrow:string;before:string;emphasis:string;after:string;audience:string;description:string;strategy:string;outputs:string[];cta:string;faq:{q:string;a:string}[];problems:string[];scope:string[];image?:string;alt?:string};
 export const servicePages:Record<string,ServiceProfile>={
   "/franchise/diagnosis": {
     "href": "/franchise/diagnosis",
@@ -32,9 +32,7 @@ export const servicePages:Record<string,ServiceProfile>={
       "검색·홈페이지·콘텐츠 현황 확인",
       "가맹문의와 상담 전환 흐름 분석",
       "개선 우선순위 및 실행 과제 정리"
-    ],
-    "image": "/images/pdf-reference/consulting-session.jpg",
-    "alt": "프랜차이즈 본사 컨설팅 현장"
+    ]
   },
   "/franchise/sales": {
     "href": "/franchise/sales",
@@ -69,9 +67,7 @@ export const servicePages:Record<string,ServiceProfile>={
       "네이버 플레이스·블로그 정보 정비",
       "지역 콘텐츠와 프로모션 기획",
       "점주 실행 가이드와 현장 피드백"
-    ],
-    "image": "/images/pdf-reference/consulting-session.jpg",
-    "alt": "프랜차이즈 본사 컨설팅 현장"
+    ]
   },
   "/franchise/ads": {
     "href": "/franchise/ads",
@@ -106,9 +102,7 @@ export const servicePages:Record<string,ServiceProfile>={
       "검색·콘텐츠 광고 메시지 기획",
       "랜딩페이지 및 문의 측정 구조 점검",
       "운영 결과 보고와 소재·타깃 개선"
-    ],
-    "image": "/images/pdf-reference/consulting-session.jpg",
-    "alt": "프랜차이즈 본사 컨설팅 현장"
+    ]
   },
   "/ai-search": {
     "href": "/ai-search",
@@ -696,9 +690,7 @@ export const servicePages:Record<string,ServiceProfile>={
       "교육 대상과 현장 과제에 맞춘 진행 방식을 소개합니다.",
       "협업의 범위와 공개 기준을 명확하게 안내합니다.",
       "실제 담당자의 경험을 확인 가능한 맥락과 함께 전달합니다."
-    ],
-    "image": "/images/pdf-reference/consulting-session.jpg",
-    "alt": "프랜차이즈 본사 컨설팅 현장"
+    ]
   },
   "/project/marketing": {
     "href": "/project/marketing",
@@ -733,9 +725,7 @@ export const servicePages:Record<string,ServiceProfile>={
       "진단·전략·콘텐츠·광고 실행 과정",
       "측정 기간과 비교 기준",
       "공개 승인된 결과와 후속 개선"
-    ],
-    "image": "/images/pdf-reference/consulting-session.jpg",
-    "alt": "프랜차이즈 본사 컨설팅 현장"
+    ]
   },
   "/project/education": {
     "href": "/project/education",
@@ -807,9 +797,7 @@ export const servicePages:Record<string,ServiceProfile>={
       "담당 역할·일정·자료 공유 방식",
       "콘텐츠와 상표의 공개 승인",
       "협업 결과와 후속 과제 점검"
-    ],
-    "image": "/images/pdf-reference/consulting-session.jpg",
-    "alt": "프랜차이즈 본사 컨설팅 현장"
+    ]
   },
   "/project/reviews": {
     "href": "/project/reviews",
@@ -844,8 +832,6 @@ export const servicePages:Record<string,ServiceProfile>={
       "협업 과정에서의 경험",
       "확인 가능한 원문과 공개 동의",
       "개인정보·브랜드 정보 공개 범위"
-    ],
-    "image": "/images/pdf-reference/consulting-session.jpg",
-    "alt": "프랜차이즈 본사 컨설팅 현장"
+    ]
   }
 };

@@ -113,9 +113,6 @@ function WorkMethod(){return (<section className={s.c57}>
 <p className={s.c59}>{"전략회의와 매출 활성화부터 콘텐츠 제작, AI 검색 최적화, 실무 교육까지 브랜드 성장에 필요한 과정을 직접 연결합니다."}</p>
 <div className={s.c60}>
 <div className={s.c61}>
-<div className={s.c62}>
-<img src="/images/pdf-reference/consulting-session.jpg" alt="프랜차이즈 본사 전략회의" loading="lazy" className={s.c63}/>
-</div>
 <strong className={s.c64}>{"프랜차이즈 본사 전략회의"}</strong>
 <span className={s.c65}>{"현장에서 바로 적용할 수 있는 프랜차이즈 실무 전략을 함께 설계합니다."}</span>
 </div>
