@@ -1,0 +1,21 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const vm=require('node:vm');
+const ts=require('typescript');
+const approved=require('../../src/data/faq-approved.json');
+function moduleFrom(file,dependencies){const exports={};const js=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020,esModuleInterop:true}}).outputText;vm.runInNewContext(js,{exports,require:name=>{assert.ok(name in dependencies,name);return dependencies[name];},Date,Map,Set});return exports;}
+const core=moduleFrom('src/lib/support/core.ts',{});
+const faq=moduleFrom('src/lib/support/faq-data.ts',{'@/data/faq-approved.json':approved,'./core':core});
+assert.equal(approved.length,15);assert.equal(new Set(approved.map(f=>f.id)).size,15);
+for(const c of ['마케팅','교육','자료·문의'])assert.equal(approved.filter(f=>f.category===c).length,5);
+assert.equal(faq.mergeFaq([],false).length,15);
+const f=approved[0];const cms={id:'cms-page',slug:'cms-page',sourceId:f.id,kind:'faq',title:'수정된 질문',summary:'수정된 핵심',body:'수정된 상세',category:f.category,status:'발행',approved:true,publishedAt:'2026-10-05',order:1};
+let merged=faq.mergeFaq([cms,cms],true);assert.equal(merged.length,15);assert.equal(merged[0].question,cms.title);assert.equal(merged[0].core,cms.summary);assert.equal(merged[0].detail,cms.body);
+assert.equal(faq.mergeFaq([{...cms,status:'비공개'}],true).length,14);
+assert.equal(faq.mergeFaq([{...cms,status:'비공개'}],false).length,15);
+const expected={'마케팅 비용':1,'슈퍼바이저':1,AI:3,'전자책':1,'다운로드':1,'  ai  ':3,'없는검색어xyz':0};
+for(const [q,n] of Object.entries(expected))assert.equal(approved.filter(f=>faq.matchesFaq(f,q,'전체')).length,n,q);
+assert.equal(approved.filter(f=>faq.matchesFaq(f,'AI','교육')).length,1);
+const schema=faq.faqSchema(approved,'https://www.yumone.co.kr/#organization');
+assert.equal(schema.mainEntity.length,15);schema.mainEntity.forEach((q,i)=>{assert.equal(q['@type'],'Question');assert.equal(q.name,approved[i].question);assert.equal(q.acceptedAnswer['@type'],'Answer');assert.equal(q.acceptedAnswer.text,approved[i].core+'\n\n'+approved[i].detail);});
+console.log('PASS: 15 approved records, categories, merge/update/dedup/unpublish/fallback, search, Schema.org FAQPage shape and exact answers');
