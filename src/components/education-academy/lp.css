@@ -1,0 +1,77 @@
+/* /lp/sv-academy/ — mobile-first single column (max 720px) on top of the education landing styles. */
+.lp-shell{background:#E9E7E5}
+#education-landing.lp-sv{--wrap:720px;max-width:720px;margin-inline:auto;box-shadow:0 0 0 1px rgba(0,0,0,.04)}
+#education-landing.lp-sv section{padding-block:64px}
+#education-landing.lp-sv .h2{font-size:clamp(26px,6.4vw,36px)}
+
+/* ① HERO */
+#education-landing.lp-sv .lp-hero{background:#121212;color:#fff;padding:32px 0 0}
+#education-landing.lp-sv .lp-hero .landing-brand{margin-bottom:12px;font-size:13px;font-weight:700;color:#BDBCC2}
+#education-landing.lp-sv .lp-hero h1{font-size:clamp(29px,8vw,42px);font-weight:900;line-height:1.25}
+#education-landing.lp-sv .lp-sub{margin-top:14px;font-size:clamp(17px,4.4vw,20px);line-height:1.55;color:#D9D8DC}
+#education-landing.lp-sv .lp-proofs{list-style:none;margin:24px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+#education-landing.lp-sv .lp-proofs li{display:grid;gap:4px;align-content:start;padding:14px 10px;border:1px solid #34353c;border-radius:12px;background:#1C1D22;text-align:center}
+#education-landing.lp-sv .lp-proofs b{font-family:var(--display);font-weight:900;font-size:clamp(17px,4.8vw,22px);line-height:1.2;color:#fff}
+#education-landing.lp-sv .lp-proofs span{font-size:12.5px;line-height:1.4;color:#BDBCC2}
+#education-landing.lp-sv .lp-hero .btn{width:100%;margin-top:24px}
+#education-landing.lp-sv .lp-hero-photo{margin:32px 0 0}
+#education-landing.lp-sv .lp-hero-photo img{display:block;width:100%;height:auto;aspect-ratio:1508/864;object-fit:cover}
+
+/* Reused blocks: keep one column inside 720px regardless of viewport width. */
+#education-landing.lp-sv .problem .wrap{grid-template-columns:1fr;gap:36px}
+#education-landing.lp-sv .compare{grid-template-columns:1fr;margin-top:32px}
+#education-landing.lp-sv .steps{grid-template-columns:1fr;gap:30px;margin-top:32px}
+#education-landing.lp-sv .stp{padding:0}
+#education-landing.lp-sv .steps::before{display:none}
+#education-landing.lp-sv .photos{grid-template-columns:1fr 1fr;margin-top:28px}
+#education-landing.lp-sv .photos figure:first-child{grid-column:1/-1}
+#education-landing.lp-sv .photos figure:first-child img{aspect-ratio:16/10}
+#education-landing.lp-sv .picks,#education-landing.lp-sv .sheets{grid-template-columns:1fr}
+#education-landing.lp-sv .coach{margin-top:0;padding-top:0;border-top:0;grid-template-columns:1fr;gap:32px}
+#education-landing.lp-sv .coach-photo{position:static;max-width:240px;margin-inline:auto}
+#education-landing.lp-sv .career{grid-template-columns:1fr}
+#education-landing.lp-sv .form-wrap{grid-template-columns:1fr;margin-top:0}
+#education-landing.lp-sv form{grid-template-columns:1fr}
+#education-landing.lp-sv .detail{padding-block:64px}
+
+/* ④ materials */
+#education-landing.lp-sv .lp-materials{margin-top:36px;padding:22px;border-radius:14px;background:var(--surface);border:1px solid var(--line)}
+#education-landing.lp-sv .lp-materials h3{font-size:18px;font-weight:900}
+#education-landing.lp-sv .lp-materials ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+#education-landing.lp-sv .lp-materials li{font-size:14px;font-weight:700;padding:6px 12px;border-radius:999px;background:var(--red-tint);color:var(--red)}
+
+/* ⑥ numbers */
+#education-landing.lp-sv .lp-numbers .num-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+#education-landing.lp-sv .lp-numbers .num b{font-size:clamp(34px,9vw,56px)}
+#education-landing.lp-sv .lp-numbers .num span{font-size:14px}
+#education-landing.lp-sv .lp-numbers .num small{font-size:11.5px}
+#education-landing.lp-sv .lp-voice .picks{margin-top:28px}
+
+/* ⑧ format cards */
+#education-landing.lp-sv .lp-format-cards{display:grid;gap:14px;margin-top:28px}
+#education-landing.lp-sv .lp-format{display:grid;grid-template-columns:44px 1fr;column-gap:14px;row-gap:4px;align-items:start;width:100%;padding:20px;text-align:left;font:inherit;color:var(--text);background:var(--surface);border:1.5px solid var(--line);border-radius:16px;cursor:pointer;transition:border-color .15s ease}
+#education-landing.lp-sv .lp-format:hover,#education-landing.lp-sv .lp-format:focus-visible{border-color:var(--red)}
+#education-landing.lp-sv .lp-format>span:not(.lp-format-key){grid-column:2}
+#education-landing.lp-sv .lp-format-key{grid-row:1/span 4;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;font-family:var(--display);font-weight:900;font-size:19px}
+#education-landing.lp-sv .lp-format-ask{font-size:15px;color:var(--muted)}
+#education-landing.lp-sv .lp-format-title{font-family:var(--display);font-weight:900;font-size:21px}
+#education-landing.lp-sv .lp-format-meta{font-size:14.5px;font-weight:700}
+#education-landing.lp-sv .lp-format-go{margin-top:6px;font-family:var(--display);font-weight:800;font-size:15px;color:var(--red)}
+#education-landing.lp-sv .lp-note{margin-top:16px;font-size:14px;color:var(--muted)}
+
+/* ⑨ follow-up notice, ⑩ FAQ */
+#education-landing.lp-sv .lp-followup{padding-block:48px}
+#education-landing.lp-sv .lp-followup .followup{margin-bottom:0}
+#education-landing.lp-sv .lp-faq .faq{margin-top:12px}
+
+/* ⑪ form */
+#education-landing.lp-sv .lp-format-field{margin:0;padding:0;border:0;min-width:0}
+#education-landing.lp-sv .lp-format-field legend{padding:0;margin-bottom:6px;font-size:13.5px;font-weight:700}
+#education-landing.lp-sv .lp-format-field label{display:flex;align-items:center;gap:10px;min-height:46px;padding:10px 12px;margin-top:6px;border:1px solid #dcd9d7;border-radius:10px;background:#faf9f8;font-size:15px;cursor:pointer}
+#education-landing.lp-sv .lp-format-field label:has(input:checked){border-color:var(--red);background:#fff;box-shadow:inset 0 0 0 1px var(--red)}
+#education-landing.lp-sv .lp-format-field input{width:18px;height:18px;margin:0;accent-color:var(--red)}
+
+/* Mobile sticky apply button */
+#education-landing.lp-sv .lp-sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;align-items:center;justify-content:center;gap:8px;max-width:720px;margin-inline:auto;min-height:60px;padding:0 20px calc(env(safe-area-inset-bottom,0px));background:var(--red);color:#fff;font-family:var(--display);font-weight:800;font-size:17px;text-decoration:none;box-shadow:0 -8px 24px -12px rgba(0,0,0,.4)}
+@media (max-width:720px){#education-landing.lp-sv{padding-bottom:60px}}
+@media (min-width:721px){#education-landing.lp-sv .lp-sticky{display:none!important}}

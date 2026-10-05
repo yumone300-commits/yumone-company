@@ -21,7 +21,7 @@ function Paper({p, compact = false}: {p: ServiceGuide; compact?: boolean}) {
     <div className={s.paperTop}><span>YUMONE COMPANY</span><span>구성 예시</span></div>
     <h3>{p.example.title}</h3>
     <dl>{p.example.rows.slice(0, compact ? 3 : 4).map(([label, text]) => <div key={label}><dt>{label}</dt><dd>{text}</dd></div>)}</dl>
-    <p className={s.paperNote}>업무 설명용 기획 예시 · 실제 고객 실적이나 검색 결과가 아닙니다.</p>
+
   </div>;
 }
 
@@ -42,7 +42,7 @@ export function ServiceGuidePage({href}: {href:string}) {
   const ai = p.group === 'ai-search';
   return <div className={s.page} data-service-guide={href}>
     <JsonLd data={{'@type':'Service',name:p.title,description:p.description,url:site.url+href+'/',provider:{'@id':site.url+'/#organization'}}}/>
-    
+
     <section className={s.hero} aria-labelledby="service-title">
       <div className={s.container}>
         <BreadcrumbTrail className={s.breadcrumb} items={[...(!hub?[{label:group.title,href:group.href}]:[]),{label:p.title,href}]}/>
@@ -68,7 +68,7 @@ export function ServiceGuidePage({href}: {href:string}) {
       {ai && <aside className={s.context}><strong>SEO·AEO·GEO는 함께 정비하는 부분이 있습니다.</strong><p>페이지 설명, FAQ와 공식 정보는 서로 연결됩니다. 겹치는 업무는 범위를 나누어 진행하며 검색 순위·AI 추천·인용을 보장하지 않습니다.</p></aside>}
     </div></section>
 
-    <section className={`${s.section} ${s.soft}`}><div className={`${s.container} ${s.exampleGrid}`}><div><p className={s.eyebrow}>{education ? '실습 자료 미리보기' : '작업 자료 미리보기'}</p><h2>{p.example.title}</h2><p className={s.sectionLead}>{education ? '실제 업무에 가져갈 자료의 항목을 먼저 확인하세요. 참여자의 수준과 사용 자료에 맞춰 실습 내용을 조정합니다.' : '어떤 정보를 정리하는지 보여주는 기획 예시입니다. 브랜드의 실제 자료를 확인한 뒤 항목과 내용을 구성합니다.'}</p><div className={s.takeaway}><h3>검토할 때 확인할 것</h3><ul><li>{p.jobs[0][0]}에 필요한 공식 자료가 있는가</li><li>자료 검토자와 사용자가 정해져 있는가</li><li>추가 제작과 기존 자료 활용 범위가 구분되어 있는가</li></ul></div>{!education && <p className={s.exampleDisclaimer}>예시의 항목·문구는 서비스 이해를 돕기 위한 것으로, 실제 고객 사례나 확인된 검색·AI 답변이 아닙니다.</p>}</div><Paper p={p}/><div className={s.exampleCta}><NextStep p={p} title="우리 브랜드에는 어떤 자료가 필요할까요?" text="기존 자료를 활용할 부분과 새로 만들 부분을 함께 구분합니다."/></div></div></section>
+    <section className={`${s.section} ${s.soft}`}><div className={`${s.container} ${s.exampleGrid}`}><div><p className={s.eyebrow}>{education ? '실습 자료 미리보기' : '작업 자료 미리보기'}</p><h2>{p.example.title}</h2><p className={s.sectionLead}>{education ? '실제 업무에 가져갈 자료의 항목을 먼저 확인하세요. 참여자의 수준과 사용 자료에 맞춰 실습 내용을 조정합니다.' : '어떤 정보를 정리하는지 보여주는 기획 예시입니다. 브랜드의 실제 자료를 확인한 뒤 항목과 내용을 구성합니다.'}</p><div className={s.takeaway}><h3>검토할 때 확인할 것</h3><ul><li>{p.jobs[0][0]}에 필요한 공식 자료가 있는가</li><li>자료 검토자와 사용자가 정해져 있는가</li><li>추가 제작과 기존 자료 활용 범위가 구분되어 있는가</li></ul></div>{!education && <p className={s.exampleDisclaimer}>구성 예시</p>}</div><Paper p={p}/><div className={s.exampleCta}><NextStep p={p} title="우리 브랜드에는 어떤 자료가 필요할까요?" text="기존 자료를 활용할 부분과 새로 만들 부분을 함께 구분합니다."/></div></div></section>
 
     </>}
     <section className={s.section}><div className={s.container}><p className={s.eyebrow}>진행 절차와 견적</p><h2>{education ? '교육을 준비하고 활용 자료를 정리하기까지.' : '자료를 확인하고 결과물을 전달하기까지.'}</h2><ol className={s.process}>{processByGroup[p.group].map(([title,text],index) => <li key={title}><span className={s.stepNumber}>0{index+1}</span><h3>{title}</h3><p>{text}</p></li>)}</ol><div className={s.quote}><h3>견적을 정할 때 확인합니다</h3><p>{p.quote}. 필요한 업무와 자료를 확인한 뒤 비용·일정·수정 범위를 안내합니다.</p></div></div></section>

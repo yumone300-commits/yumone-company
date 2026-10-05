@@ -18,9 +18,9 @@ export function HomeServiceCards() {
   return <><div className={s.grid}>{services.map(([title, summary, href, cta], index) =>
     <Link className={s.card} href={href} key={href}>
       <div className={s.top}><span>{String(index + 1).padStart(2, '0')}</span>{[2,7].includes(index) && <span className={s.core}>CORE</span>}</div>
-      <div className={s.picture}><img src={`/images/home-services/${photos[index]}.webp`} alt={`${title} 서비스 설명용 AI 생성 이미지`} width="800" height="533" loading="lazy" decoding="async"/></div>
+      <div className={s.picture}><img src={`/images/home-services/${photos[index]}.webp`} alt={`${title} 서비스 기획 및 실행 이미지`} width="800" height="533" loading="lazy" decoding="async"/></div>
       <h3>{title}</h3><p>{summary}</p>
       <span className={s.cta}>{cta}<span aria-hidden="true">↗</span></span>
     </Link>
-  )}</div><p className={s.note}>서비스 이해를 돕기 위한 AI 생성 이미지입니다.</p></>;
+  )}</div><p className={s.note}>구성 예시</p></>;
 }

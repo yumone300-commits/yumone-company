@@ -21,9 +21,14 @@ export const educationProducts:EducationProduct[]=[
   {...pending,id:'ebook-sv',audience:'SV·본사 직원',target:'SV',mode:'ebook',title:'점주 상담이 막힐 때 꺼내 보는 SV 대화법',benefit:'점주 상담이 막힐 때, 바로 참고할 질문과 대화 예시.',description:'',contents:['상황별 질문','대화 예시','방문 체크리스트'],cta:'목차·가격 보기',status:'draft',publicApproved:false,schedule:null},
   {...pending,id:'ebook-owner',audience:'가맹점주·매장 책임자',target:'가맹점주',mode:'ebook',title:'우리 매장 AI 홍보문 작성 가이드',benefit:'메뉴와 매장 특징을 넣어, 우리 가게 홍보문을 만드는 가이드.',description:'',contents:['매장 소개문·행사 안내·SNS 문안 예시','AI 입력문','게시 전 체크리스트'],cta:'목차·가격 보기',status:'draft',publicApproved:false,schedule:null},
 ];
-export const groupEducationPlan='본사 단체 교육';
+// VOD·전자책 진열대 노출 여부. 출시·판매 검증 전에는 false로 두고 코드는 보존합니다.
+export const showDigitalProducts=false;
+// 상담 신청서의 "관심 상품" 선택지. 상품 카드 버튼은 아래 매핑으로 이 중 하나를 선택합니다.
+export const inquiryPlans=['SV 실무 교육','가맹점 AI 마케팅 교육','가맹점주 교육','연간 교육 파트너십','아직 모르겠어요'];
+export const undecidedPlan='아직 모르겠어요';
+const productInquiryPlans:Record<string,string>={'offline-sv':'SV 실무 교육','live-sv':'SV 실무 교육','offline-owner':'가맹점주 교육','live-owner':'가맹점 AI 마케팅 교육'};
 export const inquiryProducts=educationProducts.filter(p=>p.status==='inquiry'&&p.publicApproved);
-export const productPlan=(p:EducationProduct)=>`${p.title} · ${educationModes[p.mode]}`;
+export const productPlan=(p:EducationProduct)=>productInquiryPlans[p.id]||undecidedPlan;
 export function verifiedHttpsUrl(value:string|null):boolean {
   if(!value)return false;
   try{const url=new URL(value);return url.protocol==='https:'&&!url.username&&!url.password;}catch{return false;}

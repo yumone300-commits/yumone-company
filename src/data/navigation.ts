@@ -441,5 +441,5 @@ export const navigation:NavigationGroup[]=[
 export const allNavigationPages=navigation.flatMap(g=>[g,...g.children]);
 export const contactHref=(service:string)=>`/contact?service=${encodeURIComponent(service)}`;
 export const serviceOptions=navigation.filter(g=>!['about','project','insight'].includes(g.key)).map(g=>({value:g.key,label:g.title}));
-export const companyContact={phone:'02-6949-6859',tel:'0269496859',email:'yumone300@gmail.com',address:'서울시 서초구 남부순환로350길 11, 8층'}; // User-supplied final PDF footer.
+export const companyContact={phone:'02-6949-6859',tel:'0269496859',email:'yumone300@gmail.com',address:'서울시 서초구 남부순환로 350길 11, 804호'}; // User-supplied final PDF footer.
 export const legacyRoutes:Record<string,string>={'/services':'/franchise','/services/franchise':'/franchise','/services/marketing':'/franchise/ads','/services/ai-search':'/ai-search','/services/consulting':'/franchise/diagnosis','/education/headquarters':'/education/hq','/education/sv':'/education/supervisor','/education/franchisee':'/education/owner','/education/ai-marketing':'/education/ai','/cases':'/project','/insights':'/insight'};

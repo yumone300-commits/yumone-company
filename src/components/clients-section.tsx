@@ -1,3 +1,4 @@
+import {clientVisibility} from '@/data/publication';
 import Image from 'next/image';
 import Link from 'next/link';
 import {clients} from '@/data/clients';
@@ -12,7 +13,7 @@ export function ClientsSection({withCTA = true}: {withCTA?: boolean}) {
         <p className={s.description}>브랜드를 성장시키는 마케팅,<br/>사람을 성장시키는 교육.<br/>염원컴퍼니가 다양한 브랜드와 함께합니다.</p>
       </header>
       <ul className={s.grid} aria-label="함께한 고객사 로고">
-        {clients.map(client => <li key={client.src} className={s.logo}>
+        {clients.filter(client=>clientVisibility[client.name]!==false).map(client => <li key={client.src} className={s.logo}>
           <Image src={client.src} alt={client.name} width={client.width} height={client.height} style={{width: client.displayWidth}} sizes="(max-width: 760px) 40vw, 190px" loading="lazy"/>
         </li>)}
       </ul>

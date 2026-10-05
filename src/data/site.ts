@@ -1,11 +1,12 @@
 import {navigation,companyContact} from './navigation';
+import {SITE_URL} from '@/lib/site';
 export const site = {
   name: '염원컴퍼니', englishName: 'YUMONE COMPANY', ceo: '염혜단',
-  url: process.env.NEXT_PUBLIC_SITE_URL || 'https://yumone-company.vercel.app',
+  url: SITE_URL,
   description: '20년 프랜차이즈 현장 경험을 바탕으로 마케팅, 본사·SV·가맹점주 교육, AI 검색을 연결하는 성장 파트너 염원컴퍼니입니다.',
   // TODO: 실제 운영 정보 확인 후 입력. 비어 있는 정보는 화면 및 구조화 데이터에서 제외합니다.
-  phone: companyContact.phone, email: companyContact.email, address: companyContact.address, businessNumber: '', logo: '', ceoPhoto: '/images/yeom-hyedan.jpg',
-  privacyOfficer: '', retentionPeriod: '', careers: [] as string[], achievements: [] as string[],
+  phone: companyContact.phone, email: companyContact.email, address: companyContact.address, businessNumber: '147-86-03066', logo: '', ceoPhoto: '/images/yeom-hyedan.jpg',
+  privacyOfficer: '염혜단', retentionPeriod: '상담 완료 후 1년 또는 삭제 요청 시까지', careers: [] as string[], achievements: [] as string[],
 };
 export const nav = navigation.map(g=>({label:g.title,href:g.href}));
 // 아래 수치는 사용자 제공 브리프 기준. 공개 전 증빙 확인 필요.

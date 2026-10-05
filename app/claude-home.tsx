@@ -1,3 +1,4 @@
+import {showProjectResults} from '@/data/publication';
 import {ClientsSection} from '@/components/clients-section';
 import Link from 'next/link';
 /* Ported from the user-supplied Yumone Homepage.dc.html. Native React replaces DC runtime tags. */
@@ -384,7 +385,9 @@ function Founder(){return (<section id="founder" className={[s.c181,s.founder].j
 </div>
 </section>)}
 
-function Cases(){return (<section id="cases" className={s.c174}>
+function Cases(){return <>{showProjectResults && <ProjectResults/>}<EducationResults/></>}
+
+function ProjectResults(){return (<section id="cases" className={s.c174}>
 <div className={s.c18}>
 <p className={s.c154}><span className={s.c155}></span>{"PROJECT RESULTS"}</p>
 <h2 className={s.c175}>{"실행 과정과"}{' '}<br/>{"확인된 결과로 보여드립니다."}</h2>
@@ -395,15 +398,18 @@ function Cases(){return (<section id="cases" className={s.c174}>
 </div>
 </section>)}
 
+
+function EducationResults(){return <section id="cases" className={s.c174}><div className={s.c18}><p className={s.c154}>EDUCATION RESULTS</p><h2 className={s.c175}>현장에서 함께 배우고,<br/>실무로 이어가는 교육</h2><div className={s.c195}>{[{value:'500+',label:'누적 교육 인원',detail:'2025–2026년 CS·AI 교육'},{value:'100%',label:'교육 수료율',detail:'2026년 3개 과정'},{value:'5.0 / 5',label:'강사 전문성',detail:'SV CS 2차 · 2026.08.20'},{value:'4.8 / 5',label:'현업 적용도',detail:'AI 교육 · 2026.05.28'}].map(item=><article className={s.c196} key={item.label}><span className={s.c197}>{item.label}</span><h3 className={s.c198}>{item.value}</h3><p>{item.detail}</p></article>)}</div><p>출처: 고용노동부·한국산업인력공단 재직자 훈련 과정 운영 결과보고서</p></div></section>}
+
 function ContentHub(){return <section id="content-hub" className={s.c203}><div className={s.c18}>
 <p className={s.c186}><span className={s.c155}/>FRANCHISE CONTENT HUB</p>
 <h2 className={s.c204}>프랜차이즈 현장에서 필요한 내용을<br/>쉽고 실용적으로 전합니다.</h2>
 <div className={s.c205}>
-<div className={s.c206}><span className={s.c207}>BOOK</span><h3 className={s.c208}>장사의 기술</h3><a className={s.c209} href="https://www.yes24.com/goods/detail/147562111">도서 정보 보기 ↗</a></div>
-<a className={s.c210} href="https://www.youtube.com/@프차언니/"><span className={s.c207}>YOUTUBE</span><h3 className={s.c211}>프랜차이즈 성공 비밀,<br/>‘프차언니’ 채널</h3><span className={s.c212}>채널 바로가기 ↗</span></a>
-{[{category:'AI SEARCH',title:'프랜차이즈 마케팅, 이제는 AI 검색까지 대응해야 하는 이유'},{category:'LOCAL GROWTH',title:'네이버 플레이스 최적화, 가맹점 매출을 바꾸는 첫걸음'},{category:'EDUCATION',title:'슈퍼바이저 교육이 브랜드 통일성을 결정하는 이유'}].map(item=><a key={item.category} className={s.c210} href="https://blog.naver.com/yumone_company"><span className={s.c207}>{item.category}</span><h3 className={s.c213}>{item.title}</h3><span className={s.c212}>자세히 읽기 ↗</span></a>)}
+<div className={s.c206}><span className={s.c207}>BOOK</span><h3 className={s.c208}>장사의 기술</h3><a className={s.c209} href="https://www.yes24.com/goods/detail/147562111" target="_blank" rel="noopener noreferrer">도서 정보 보기 ↗</a></div>
+<a className={s.c210} href="https://www.youtube.com/@프차언니/" target="_blank" rel="noopener noreferrer"><span className={s.c207}>YOUTUBE</span><h3 className={s.c211}>프랜차이즈 성공 비밀,<br/>‘프차언니’ 채널</h3><span className={s.c212}>채널 바로가기 ↗</span></a>
+{[{category:'AI SEARCH',title:'프랜차이즈 마케팅, 이제는 AI 검색까지 대응해야 하는 이유'},{category:'LOCAL GROWTH',title:'네이버 플레이스 최적화, 가맹점 매출을 바꾸는 첫걸음'},{category:'EDUCATION',title:'슈퍼바이저 교육이 브랜드 통일성을 결정하는 이유'}].map(item=><a key={item.category} className={s.c210} href="/insight/"><span className={s.c207}>{item.category}</span><h3 className={s.c213}>{item.title}</h3><span className={s.c212}>자세히 읽기 ↗</span></a>)}
 <div className={s.hubBlank} aria-hidden="true"/></div>
-<a href="https://www.youtube.com/@프차언니/" className={s.c214}>프차언니 유튜브에서 더 보기 ↗</a></div></section>}
+<a href="https://www.youtube.com/@프차언니/" className={s.c214} target="_blank" rel="noopener noreferrer">프차언니 유튜브에서 더 보기 ↗</a></div></section>}
 
 function Education(){return (<section id="education" className={s.c174}>
 <div className={s.c18}>
@@ -419,7 +425,7 @@ function Education(){return (<section id="education" className={s.c174}>
 <div className={s.c217}><span className={s.c218}>{"프랜차이즈 온라인 마케팅"}</span><span className={s.c218}>{"슈퍼바이저 실무"}</span><span className={s.c218}>{"가맹점 매출 활성화"}</span><span className={s.c218}>{"네이버 플레이스·블로그 활용"}</span><span className={s.c218}>{"AI 마케팅과 업무 자동화"}</span><span className={s.c218}>{"숏폼·영상 콘텐츠 제작"}</span></div>
 </div>
 </div>
-<p className={s.c219}>{"교육 현장 자료는 확인 후 추가할 예정입니다."}</p>
+
 <Link href="/contact" className={s.c220}>{"우리 회사에 맞는 교육 프로그램 문의하기 "}<span>{"→"}</span></Link>
 </div>
 </section>)}
@@ -453,7 +459,7 @@ function FinalCTA(){return (<section className={s.c57}>
 <Link href="/contact" className={s.c234}>{"우리 브랜드 성장 진단받기 "}<span>{"→"}</span></Link>
 <Link href="/contact" className={s.c235}>{"맞춤 마케팅 제안서 요청하기"}</Link>
 </div>
-<p className={s.c236}>{"카카오톡으로 상담하기 (연결 정보 확인 필요)"}</p>
+<a className={s.c236} href="tel:0269496859">전화로 상담하기 · 02-6949-6859</a>
 </div>
 </section>)}
 
@@ -472,5 +478,5 @@ export function ClaudeHome(){return <div id="top" className={s.page}><Hero/><Com
 function ReferenceFooter(){return <footer className={s.referenceFooter}><div className={s.footerGrid}>
 <div><Link href="/" aria-label="염원컴퍼니 홈"><img src="/images/yumone-logo-white.svg" alt="YUMONE COMPANY" width="200" height="69" style={{maxWidth:"100%",height:"auto",objectFit:"contain"}}/></Link><p>프랜차이즈의 성장을<br/>현장에서 설계합니다.</p></div>
 <div><h3>COMPANY</h3><p>염원컴퍼니 · 대표 염혜단<br/>프랜차이즈 전문 마케팅·교육·컨설팅<br/>사업자등록번호 147-86-03066</p></div>
-<div><h3>CONTACT</h3><p><a href="tel:0269496859">T. 02-6949-6859</a><br/>F. 0504-491-9439<br/><a href="mailto:yumone300@gmail.com">yumone300@gmail.com</a><br/>서울시 서초구 남부순환로350길 11, 8층</p></div>
-<div><h3>CHANNEL</h3><a href="https://www.youtube.com/@프차언니/">프차언니 유튜브 ↗</a><br/><a href="https://www.instagram.com/fc_aunni/">인스타그램 ↗</a><br/><a href="https://blog.naver.com/yumone_company">공식 블로그 ↗</a></div></div><div className={s.footerBottom}><span>© YUMONE COMPANY. All rights reserved.</span><span><Link href="/privacy">개인정보처리방침</Link> · <Link href="/terms">이용약관</Link></span></div></footer>}
+<div><h3>CONTACT</h3><p><a href="tel:0269496859">T. 02-6949-6859</a><br/>F. 0504-491-9439<br/><a href="mailto:yumone300@gmail.com">yumone300@gmail.com</a><br/>서울시 서초구 남부순환로350길 11, 804호</p></div>
+<div><h3>CHANNEL</h3><a href="https://www.youtube.com/@프차언니/" target="_blank" rel="noopener noreferrer">프차언니 유튜브 ↗</a><br/><a href="https://www.instagram.com/fc_aunni/" target="_blank" rel="noopener noreferrer">인스타그램 ↗</a><br/><a href="https://blog.naver.com/yumone_company" target="_blank" rel="noopener noreferrer">공식 블로그 ↗</a></div></div><div className={s.footerBottom}><span>© YUMONE COMPANY. All rights reserved.</span><span><Link href="/privacy">개인정보처리방침</Link> · <Link href="/terms">이용약관</Link></span></div></footer>}

@@ -1,8 +1,13 @@
-export type ContactPayload={website?:string;company:string;name:string;role:string;phone:string;email:string;brand:string;stores:string;service:string;concern:string;budget:string;timing:string;consent:boolean};
-export type ContactResult={mode:'mock';message:string};
-// TODO: 실제 접수 전 서버 API, 유효성 검사, 스팸 방어, 개인정보 정책 확정.
-// 이 모의 어댑터는 데이터를 저장하거나 네트워크로 전송하지 않습니다.
-export async function submitContact(payload:ContactPayload):Promise<ContactResult>{
- if(!payload.company.trim()||!payload.name.trim()||!payload.phone.trim()||!payload.email.trim()||!payload.service||!payload.concern.trim()||!payload.consent)throw new Error('필수 항목과 개인정보 동의를 확인해 주세요.');
- return {mode:'mock',message:'입력 형식을 확인했습니다. 입력하신 내용은 저장·전송되지 않았으며 실제 상담 접수는 이루어지지 않았습니다.'};
+export type ContactPayload={website?:string;company:string;name:string;phone:string;email?:string;stores?:string;service?:string;concern?:string;budget?:string;timing?:string;consent:boolean;'bot-field'?:string};
+export type ContactResult={message:string};
+export async function sendInquiry(data:Record<string,string>):Promise<ContactResult>{
+ const failure=()=>new Error('전송에 실패했습니다. 02-6949-6859로 연락 주세요.');
+ const response=await fetch('/api/contact/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),signal:AbortSignal.timeout(25000)}).catch(()=>{throw failure();});
+ const result=await response.json().catch(()=>{throw failure();});
+ if(!response.ok||result.ok!==true)throw new Error(result.message||'전송에 실패했습니다. 02-6949-6859로 연락 주세요.');
+ (window.dataLayer??=[]).push({event:'lead_submit',form_id:data['form-name']});
+ return result;
+}
+export async function submitContact(payload:ContactPayload,requestId=crypto.randomUUID()):Promise<ContactResult>{
+ return sendInquiry({'form-name':'contact',page:location.pathname,company:payload.company,name:payload.name,phone:payload.phone,email:payload.email||'',website:payload.website||'',service:payload.service||'',message:[payload.concern||'',payload.stores&&`가맹점 수: ${payload.stores}`,payload.budget&&`예산: ${payload.budget}`,payload.timing&&`희망 시기: ${payload.timing}`].filter(Boolean).join('\n'),agree:payload.consent?'동의':'','bot-field':payload['bot-field']||'',request_id:requestId});
 }
